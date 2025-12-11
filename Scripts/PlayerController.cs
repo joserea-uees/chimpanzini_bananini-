@@ -1,42 +1,106 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement; 
 
 public class PlayerController : MonoBehaviour
 {
-    public float runSpeed = 8f;
-    public float jumpForce = 12f;
-    public LayerMask groundLayer;
+    [Header("Configuración de Movimiento")]
+    public float fuerzaSalto = 15f;
+    public float velocidadCorrer = 10f;
 
+    [Header("Configuración de Animación")]
+    public Sprite[] spritesCorrer;    
+    public Sprite spriteSaltar;       
+    public float velocidadAnimacion = 0.05f; 
+
+    
     private Rigidbody2D rb;
-    private bool isGrounded = false;
+    private SpriteRenderer spriteRenderer;
+    private bool estaEnSuelo;
+    private int indiceAnimacion = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        groundLayer = LayerMask.GetMask("Ground");
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        
+        StartCoroutine(RutinaAnimacion());
     }
 
     void Update()
     {
-        // Corre siempre hacia la derecha (endless runner)
-        rb.linearVelocity = new Vector2(runSpeed, rb.linearVelocity.y);
-
-        // Salto con espacio o click/tap
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && isGrounded)
+      
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            if (estaEnSuelo)
+            {
+                Saltar();
+            }
         }
     }
 
-    // Detectar suelo muy simple
-    void OnCollisionEnter2D(Collision2D col)
+    void FixedUpdate()
     {
-        if (col.gameObject.CompareTag("Ground"))
-            isGrounded = true;
+        
+        rb.linearVelocity = new Vector2(velocidadCorrer, rb.linearVelocity.y);
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    void Saltar()
     {
-        if (col.gameObject.CompareTag("Ground"))
-            isGrounded = false;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
+        rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        estaEnSuelo = false; 
+    }
+
+    IEnumerator RutinaAnimacion()
+    {
+        while (true) 
+        {
+            if (estaEnSuelo)
+            {
+              
+                if (spritesCorrer.Length > 0)
+                {
+                    spriteRenderer.sprite = spritesCorrer[indiceAnimacion];
+                    
+                    indiceAnimacion++;
+
+                    if (indiceAnimacion >= spritesCorrer.Length)
+                    {
+                        indiceAnimacion = 0;
+                    }
+                }
+            }
+            else
+            {
+                if (spriteSaltar != null)
+                {
+                    spriteRenderer.sprite = spriteSaltar;
+                }
+                
+            
+            }
+
+            yield return new WaitForSeconds(velocidadAnimacion);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            estaEnSuelo = true;
+        }
+
+        if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
+        {
+            ReiniciarNivel();
+        }
+    }
+
+    void ReiniciarNivel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
