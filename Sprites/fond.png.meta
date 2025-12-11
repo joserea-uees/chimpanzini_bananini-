@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 84fa81de02c75ab49a16e29fc68f8884
+guid: 2468bd48302de9946828e598dfb099a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5300282943473015828
-    second: mundoTierra_0
+      213: -7585009627398372457
+    second: fond_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mundoTierra_0
+      name: fond_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1875
-        height: 1073
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce3aa39bebc9176b0800000000000000
-      internalID: -5300282943473015828
+      spriteID: 79380055ee1acb690800000000000000
+      internalID: -7585009627398372457
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mundoTierra_0: -5300282943473015828
+      fond_0: -7585009627398372457
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
