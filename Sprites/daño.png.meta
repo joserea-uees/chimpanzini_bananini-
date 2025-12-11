@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 042e62844dfe8494db461ad9de7523ec
+guid: da20b72dfd99cff4ea97bcf0b718c034
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1495636479084036639
-    second: muerte_0
+      213: 6327578175764539422
+    second: "da\xF1o_0"
   - first:
-      213: -9146826682594036208
-    second: muerte_1
+      213: -4407979361025910873
+    second: "da\xF1o_1"
   - first:
-      213: -8035738270839704436
-    second: muerte_2
+      213: 5986740560975377063
+    second: "da\xF1o_2"
   - first:
-      213: 6411007131442772949
-    second: muerte_3
+      213: -6262424229456928617
+    second: "da\xF1o_3"
+  - first:
+      213: 3691147706034676591
+    second: "da\xF1o_4"
+  - first:
+      213: -8603470679556058083
+    second: "da\xF1o_5"
+  - first:
+      213: -7152766214784501732
+    second: "da\xF1o_6"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: muerte_0
+      name: "da\xF1o_0"
       rect:
         serializedVersion: 2
-        x: 20
-        y: 120
-        width: 142
-        height: 147
+        x: 50
+        y: 221
+        width: 96
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +133,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ed7417eb8e6e3be0800000000000000
-      internalID: -1495636479084036639
+      spriteID: e18a5fe63d210d750800000000000000
+      internalID: 6327578175764539422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: muerte_1
+      name: "da\xF1o_1"
       rect:
         serializedVersion: 2
-        x: 193
-        y: 125
-        width: 115
+        x: 223
+        y: 220
+        width: 93
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a71cc82026b3d2c0800000000000000
+      internalID: -4407979361025910873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "da\xF1o_2"
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 227
+        width: 96
         height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -146,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 016fae91891ff0180800000000000000
-      internalID: -9146826682594036208
+      spriteID: 7a23c5332dc251350800000000000000
+      internalID: 5986740560975377063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: muerte_2
+      name: "da\xF1o_3"
       rect:
         serializedVersion: 2
-        x: 336
-        y: 120
-        width: 107
-        height: 144
+        x: 548
+        y: 231
+        width: 97
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c84769a2e925b7090800000000000000
-      internalID: -8035738270839704436
+      spriteID: 790ab62d7566719a0800000000000000
+      internalID: -6262424229456928617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: muerte_3
+      name: "da\xF1o_4"
       rect:
         serializedVersion: 2
-        x: 495
-        y: 121
-        width: 110
-        height: 144
+        x: 53
+        y: 59
+        width: 96
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +221,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5db7422e40978f850800000000000000
-      internalID: 6411007131442772949
+      spriteID: f63e1b73847993330800000000000000
+      internalID: 3691147706034676591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "da\xF1o_5"
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 58
+        width: 101
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14929500055a9880800000000000000
+      internalID: -8603470679556058083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "da\xF1o_6"
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 53
+        width: 96
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18ba5e46054cbc90800000000000000
+      internalID: -7152766214784501732
       vertices: []
       indices: 
       edges: []
@@ -210,10 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      muerte_0: -1495636479084036639
-      muerte_1: -9146826682594036208
-      muerte_2: -8035738270839704436
-      muerte_3: 6411007131442772949
+      "da\xF1o_0": 6327578175764539422
+      "da\xF1o_1": -4407979361025910873
+      "da\xF1o_2": 5986740560975377063
+      "da\xF1o_3": -6262424229456928617
+      "da\xF1o_4": 3691147706034676591
+      "da\xF1o_5": -8603470679556058083
+      "da\xF1o_6": -7152766214784501732
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

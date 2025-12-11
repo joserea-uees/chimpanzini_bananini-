@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 9338ea343509ec243b709397afd1a04f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4901174345347946800
+    second: tucan_0
+  - first:
+      213: -6169627803279436145
+    second: tucan_1
+  - first:
+      213: 5553986170195306341
+    second: tucan_2
+  - first:
+      213: 5673092251166475674
+    second: tucan_3
+  - first:
+      213: -7246728392372383110
+    second: tucan_4
+  - first:
+      213: -3134913183703022755
+    second: tucan_5
+  - first:
+      213: 6097478693730692316
+    second: tucan_6
+  - first:
+      213: -8560902147277385736
+    second: tucan_7
+  - first:
+      213: -6509265611273314696
+    second: tucan_8
+  - first:
+      213: -5487357876034926698
+    second: tucan_9
+  - first:
+      213: 1668693605609948439
+    second: tucan_10
+  - first:
+      213: 732627755847398335
+    second: tucan_11
+  - first:
+      213: -4778902023126237138
+    second: tucan_12
+  - first:
+      213: 5747954087535607448
+    second: tucan_13
+  - first:
+      213: 4485530576494161820
+    second: tucan_14
+  - first:
+      213: -8082484558329105044
+    second: tucan_15
+  - first:
+      213: -7631635893129644102
+    second: tucan_16
+  - first:
+      213: 1227834661693510053
+    second: tucan_17
+  - first:
+      213: -4235943635790761474
+    second: tucan_18
+  - first:
+      213: -3120872433629814680
+    second: tucan_19
+  - first:
+      213: -3397026659435575615
+    second: tucan_20
+  - first:
+      213: -1793316408039550905
+    second: tucan_21
+  - first:
+      213: -2596763302190627474
+    second: tucan_22
+  - first:
+      213: -8900478112760784966
+    second: tucan_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tucan_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 303
+        width: 86
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 039d8bc7918740440800000000000000
+      internalID: 4901174345347946800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 303
+        width: 86
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86d7257334116aa0800000000000000
+      internalID: -6169627803279436145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 303
+        width: 87
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5676ce9def8b31d40800000000000000
+      internalID: 5553986170195306341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_3
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 301
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a958cc8585fdabe40800000000000000
+      internalID: 5673092251166475674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_4
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 301
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7218e40ce27e6b90800000000000000
+      internalID: -7246728392372383110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 234
+        width: 87
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5341b3a11d8e74d0800000000000000
+      internalID: -3134913183703022755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 221
+        width: 88
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdca45de0989e9450800000000000000
+      internalID: 6097478693730692316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_7
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 234
+        width: 88
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff07aacad0913980800000000000000
+      internalID: -8560902147277385736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_8
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 234
+        width: 87
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e53630a617aa5a0800000000000000
+      internalID: -6509265611273314696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_9
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 233
+        width: 88
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6970f73c51df8d3b0800000000000000
+      internalID: -5487357876034926698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_10
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 163
+        width: 88
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715c8514ef3682710800000000000000
+      internalID: 1668693605609948439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_11
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 160
+        width: 88
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb330e3ff01da2a00800000000000000
+      internalID: 732627755847398335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_12
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 157
+        width: 89
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e204a2ffdededadb0800000000000000
+      internalID: -4778902023126237138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_13
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 154
+        width: 88
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e70d4e9c5d4cf40800000000000000
+      internalID: 5747954087535607448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_14
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 154
+        width: 88
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f66114b4ecf3e30800000000000000
+      internalID: 4485530576494161820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 94
+        width: 88
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65b636fd1f35df80800000000000000
+      internalID: -8082484558329105044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_16
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 94
+        width: 88
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7f2eed69bf61690800000000000000
+      internalID: -7631635893129644102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_17
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 94
+        width: 88
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a157259e152a0110800000000000000
+      internalID: 1227834661693510053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_18
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 94
+        width: 88
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef17d1cc4b7e635c0800000000000000
+      internalID: -4235943635790761474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_19
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 94
+        width: 87
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860af248e0f60b4d0800000000000000
+      internalID: -3120872433629814680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 23
+        width: 88
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c68fcf50465bd0d0800000000000000
+      internalID: -3397026659435575615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_21
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 11
+        width: 89
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7405ce07a3cdc17e0800000000000000
+      internalID: -1793316408039550905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_22
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 23
+        width: 88
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e65482fe88176fbd0800000000000000
+      internalID: -2596763302190627474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tucan_23
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 23
+        width: 88
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab711cd20562b7480800000000000000
+      internalID: -8900478112760784966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tucan_0: 4901174345347946800
+      tucan_1: -6169627803279436145
+      tucan_10: 1668693605609948439
+      tucan_11: 732627755847398335
+      tucan_12: -4778902023126237138
+      tucan_13: 5747954087535607448
+      tucan_14: 4485530576494161820
+      tucan_15: -8082484558329105044
+      tucan_16: -7631635893129644102
+      tucan_17: 1227834661693510053
+      tucan_18: -4235943635790761474
+      tucan_19: -3120872433629814680
+      tucan_2: 5553986170195306341
+      tucan_20: -3397026659435575615
+      tucan_21: -1793316408039550905
+      tucan_22: -2596763302190627474
+      tucan_23: -8900478112760784966
+      tucan_3: 5673092251166475674
+      tucan_4: -7246728392372383110
+      tucan_5: -3134913183703022755
+      tucan_6: 6097478693730692316
+      tucan_7: -8560902147277385736
+      tucan_8: -6509265611273314696
+      tucan_9: -5487357876034926698
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
