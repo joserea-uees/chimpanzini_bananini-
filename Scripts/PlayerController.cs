@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;               // ¡¡ESTA LÍNEA ES LA QUE FALTABA!!
+using System.Collections;               
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour

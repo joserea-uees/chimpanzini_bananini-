@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3cbccef1a8dffb243b6a56da57bf7400
+guid: 689fd2aedcf93fc42905e7f363a93cb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3101105914864794996
-    second: piso_0
+      213: -1273167884044789203
+    second: hojasAriba_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: piso_0
+      name: hojasAriba_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 622
-        height: 46
+        y: 305
+        width: 661
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c820f9dc998a6f4d0800000000000000
-      internalID: -3101105914864794996
+      spriteID: d2a13141e8cc45ee0800000000000000
+      internalID: -1273167884044789203
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      piso_0: -3101105914864794996
+      hojasAriba_0: -1273167884044789203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
