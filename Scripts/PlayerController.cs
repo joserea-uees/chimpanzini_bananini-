@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement; 
+using System.Collections;               // ¡¡ESTA LÍNEA ES LA QUE FALTABA!!
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,27 +11,31 @@ public class PlayerController : MonoBehaviour
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
     public Sprite[] spritesSaltar;       
-    public float velocidadAnimacion = 0.05f; 
+    public float velocidadAnimacionCorrer = 0.08f;
+    public float velocidadAnimacionSalto = 0.12f;
 
-    
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private bool estaEnSuelo;
+    private bool estaEnSuelo = true;
     private int indiceAnimacion = 0;
     private int indiceAnimacionSalto = 0;
+
+    private Coroutine coroutineCorrer;
+    private Coroutine coroutineSaltar;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        
-        StartCoroutine(RutinaAnimacion());
+        estaEnSuelo = true;
+        indiceAnimacion = 0;
+
+        coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
     }
 
     void Update()
     {
-      
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             if (estaEnSuelo)
@@ -43,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
         rb.linearVelocity = new Vector2(velocidadCorrer, rb.linearVelocity.y);
     }
 
@@ -52,45 +55,47 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
         estaEnSuelo = false;
-        indiceAnimacionSalto = 0; // Reiniciar la animación de salto
+        indiceAnimacionSalto = 0;
+
+        if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
+        coroutineSaltar = StartCoroutine(RutinaAnimacionSalto());
     }
 
-    IEnumerator RutinaAnimacion()
+    IEnumerator RutinaAnimacionCorrer()
     {
-        while (true) 
+        while (true)
         {
-            if (estaEnSuelo)
+            if (spritesCorrer.Length > 0)
             {
-              
-                if (spritesCorrer.Length > 0)
+                spriteRenderer.sprite = spritesCorrer[indiceAnimacion];
+                indiceAnimacion++;
+                if (indiceAnimacion >= spritesCorrer.Length)
                 {
-                    spriteRenderer.sprite = spritesCorrer[indiceAnimacion];
-                    
-                    indiceAnimacion++;
-
-                    if (indiceAnimacion >= spritesCorrer.Length)
-                    {
-                        indiceAnimacion = 0;
-                    }
+                    indiceAnimacion = 0;
                 }
             }
-            else
+            yield return new WaitForSeconds(velocidadAnimacionCorrer);
+        }
+    }
+
+    IEnumerator RutinaAnimacionSalto()
+    {
+        while (true)
+        {
+            if (!estaEnSuelo)
             {
-                // Animación de salto
                 if (spritesSaltar.Length > 0)
                 {
                     spriteRenderer.sprite = spritesSaltar[indiceAnimacionSalto];
-                    
                     indiceAnimacionSalto++;
-
                     if (indiceAnimacionSalto >= spritesSaltar.Length)
                     {
-                        indiceAnimacionSalto = spritesSaltar.Length - 1; // Mantener el último sprite
+                        indiceAnimacionSalto = spritesSaltar.Length - 1;
                     }
                 }
             }
 
-            yield return new WaitForSeconds(velocidadAnimacion);
+            yield return new WaitForSeconds(velocidadAnimacionSalto);
         }
     }
 
@@ -99,6 +104,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Suelo"))
         {
             estaEnSuelo = true;
+
+            if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
+            coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
         }
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
@@ -110,5 +118,11 @@ public class PlayerController : MonoBehaviour
     void ReiniciarNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnDestroy()
+    {
+        if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
+        if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
     }
 }

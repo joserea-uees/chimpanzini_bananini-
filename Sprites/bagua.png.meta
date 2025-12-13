@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 0e4e0cc6c83ba22408b52c23bc7d6cf0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -843603047081781040
+    second: bagua_0
+  - first:
+      213: -1628121500674180411
+    second: bagua_1
+  - first:
+      213: -1995949727933671373
+    second: bagua_2
+  - first:
+      213: -1514797843397087562
+    second: bagua_3
+  - first:
+      213: 721293737042407070
+    second: bagua_4
+  - first:
+      213: -8406530480492718612
+    second: bagua_5
+  - first:
+      213: 893199749029778691
+    second: bagua_6
+  - first:
+      213: -1498321757546575105
+    second: bagua_7
+  - first:
+      213: 8982752753725138285
+    second: bagua_8
+  - first:
+      213: -2082394028383848497
+    second: bagua_9
+  - first:
+      213: -8953888271266187798
+    second: bagua_10
+  - first:
+      213: -8220173587584276257
+    second: bagua_11
+  - first:
+      213: -7879179434536783507
+    second: bagua_12
+  - first:
+      213: 7127921831813928929
+    second: bagua_13
+  - first:
+      213: -5265559139105230518
+    second: bagua_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bagua_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 260
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8d04f8f7bea44f0800000000000000
+      internalID: -843603047081781040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 261
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cab32d0f10c769e0800000000000000
+      internalID: -1628121500674180411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 261
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338d9f42c46fc44e0800000000000000
+      internalID: -1995949727933671373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_3
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 261
+        width: 89
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bee9cd136b5afae0800000000000000
+      internalID: -1514797843397087562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_4
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 261
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e602f05dc820a00800000000000000
+      internalID: 721293737042407070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 141
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5dcb45111065b80800000000000000
+      internalID: -8406530480492718612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 141
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305536a7078456c00800000000000000
+      internalID: 893199749029778691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_7
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 142
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa823acc44e43be0800000000000000
+      internalID: -1498321757546575105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 141
+        width: 91
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65e2fe690629ac70800000000000000
+      internalID: 8982752753725138285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_9
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 141
+        width: 89
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc739c70aa9d913e0800000000000000
+      internalID: -2082394028383848497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 23
+        width: 89
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae574a89e066db380800000000000000
+      internalID: -8953888271266187798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_11
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 23
+        width: 90
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8adf7aca31ced80800000000000000
+      internalID: -8220173587584276257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_12
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 33
+        width: 90
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d613fdacc0887a290800000000000000
+      internalID: -7879179434536783507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_13
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 23
+        width: 90
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7550404277be260800000000000000
+      internalID: 7127921831813928929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bagua_14
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 22
+        width: 91
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4132d17cd9fce6b0800000000000000
+      internalID: -5265559139105230518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bagua_0: -843603047081781040
+      bagua_1: -1628121500674180411
+      bagua_10: -8953888271266187798
+      bagua_11: -8220173587584276257
+      bagua_12: -7879179434536783507
+      bagua_13: 7127921831813928929
+      bagua_14: -5265559139105230518
+      bagua_2: -1995949727933671373
+      bagua_3: -1514797843397087562
+      bagua_4: 721293737042407070
+      bagua_5: -8406530480492718612
+      bagua_6: 893199749029778691
+      bagua_7: -1498321757546575105
+      bagua_8: 8982752753725138285
+      bagua_9: -2082394028383848497
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
