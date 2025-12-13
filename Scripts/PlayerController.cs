@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
-    public Sprite spriteSaltar;       
+    public Sprite[] spritesSaltar;       
     public float velocidadAnimacion = 0.05f; 
 
     
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool estaEnSuelo;
     private int indiceAnimacion = 0;
+    private int indiceAnimacionSalto = 0;
 
     void Start()
     {
@@ -50,7 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
-        estaEnSuelo = false; 
+        estaEnSuelo = false;
+        indiceAnimacionSalto = 0; // Reiniciar la animación de salto
     }
 
     IEnumerator RutinaAnimacion()
@@ -74,12 +76,18 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (spriteSaltar != null)
+                // Animación de salto
+                if (spritesSaltar.Length > 0)
                 {
-                    spriteRenderer.sprite = spriteSaltar;
+                    spriteRenderer.sprite = spritesSaltar[indiceAnimacionSalto];
+                    
+                    indiceAnimacionSalto++;
+
+                    if (indiceAnimacionSalto >= spritesSaltar.Length)
+                    {
+                        indiceAnimacionSalto = spritesSaltar.Length - 1; // Mantener el último sprite
+                    }
                 }
-                
-            
             }
 
             yield return new WaitForSeconds(velocidadAnimacion);
