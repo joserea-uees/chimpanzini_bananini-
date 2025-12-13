@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: b21cb24f0eb364b4f80903c652fffb10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5079456230639870042
+    second: burbujas-removebg-preview_0
+  - first:
+      213: -5313505127913655649
+    second: burbujas-removebg-preview_1
+  - first:
+      213: 5350481004123220071
+    second: burbujas-removebg-preview_2
+  - first:
+      213: 5406806148038780881
+    second: burbujas-removebg-preview_3
+  - first:
+      213: 8652670648518968830
+    second: burbujas-removebg-preview_4
+  - first:
+      213: 6628522675255634279
+    second: burbujas-removebg-preview_5
+  - first:
+      213: 1674020393746031888
+    second: burbujas-removebg-preview_6
+  - first:
+      213: -5092556443080174452
+    second: burbujas-removebg-preview_7
+  - first:
+      213: -7066948743521128937
+    second: burbujas-removebg-preview_8
+  - first:
+      213: 1176993126408895800
+    second: burbujas-removebg-preview_9
+  - first:
+      213: 2493974455270860412
+    second: burbujas-removebg-preview_10
+  - first:
+      213: 1478657534519531253
+    second: burbujas-removebg-preview_11
+  - first:
+      213: 8419265849290851012
+    second: burbujas-removebg-preview_12
+  - first:
+      213: 7993460257087044524
+    second: burbujas-removebg-preview_13
+  - first:
+      213: -4553721187211716639
+    second: burbujas-removebg-preview_14
+  - first:
+      213: -7182633921024299148
+    second: burbujas-removebg-preview_15
+  - first:
+      213: 3710761648603183115
+    second: burbujas-removebg-preview_16
+  - first:
+      213: 1354837767242591830
+    second: burbujas-removebg-preview_17
+  - first:
+      213: -7322024615123614482
+    second: burbujas-removebg-preview_18
+  - first:
+      213: -5688454068487867929
+    second: burbujas-removebg-preview_19
+  - first:
+      213: -1424034944590425347
+    second: burbujas-removebg-preview_20
+  - first:
+      213: 823613085787389125
+    second: burbujas-removebg-preview_21
+  - first:
+      213: 5265181114822951766
+    second: burbujas-removebg-preview_22
+  - first:
+      213: 2097600438882886200
+    second: burbujas-removebg-preview_23
+  - first:
+      213: 3527798942797373073
+    second: burbujas-removebg-preview_24
+  - first:
+      213: 8521057565436900796
+    second: burbujas-removebg-preview_25
+  - first:
+      213: -7705080053675650575
+    second: burbujas-removebg-preview_26
+  - first:
+      213: 5250562763718573501
+    second: burbujas-removebg-preview_27
+  - first:
+      213: -6814589572235675140
+    second: burbujas-removebg-preview_28
+  - first:
+      213: -2102129290693162078
+    second: burbujas-removebg-preview_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 17
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6afd09868752289b0800000000000000
+      internalID: -5079456230639870042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 207
+        width: 208
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f927d720d33a246b0800000000000000
+      internalID: -5313505127913655649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 328
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7686d3c002ab04a40800000000000000
+      internalID: 5350481004123220071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 19
+        width: 273
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7ef3f8b85d80b40800000000000000
+      internalID: 5406806148038780881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 274
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef50c6b6c16741870800000000000000
+      internalID: 8652670648518968830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 279
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769eb34f04e3dfb50800000000000000
+      internalID: 6628522675255634279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 256
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015edf3cda05b3710800000000000000
+      internalID: 1674020393746031888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 205
+        width: 86
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84549385ea9359b0800000000000000
+      internalID: -5092556443080174452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 216
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71ea7806f872ded90800000000000000
+      internalID: -7066948743521128937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 214
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83dbda23305855010800000000000000
+      internalID: 1176993126408895800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 224
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76615dad806c9220800000000000000
+      internalID: 2493974455270860412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 215
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6dd71813f358410800000000000000
+      internalID: 1478657534519531253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 203
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c20f88cead37d470800000000000000
+      internalID: 8419265849290851012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 196
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab30eda0c97eee60800000000000000
+      internalID: 7993460257087044524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 200
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e75316f4beedc0c0800000000000000
+      internalID: -4553721187211716639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 188
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47feca90188225c90800000000000000
+      internalID: -7182633921024299148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 163
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08b2271f064f7330800000000000000
+      internalID: 3710761648603183115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 167
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65e27c465c95dc210800000000000000
+      internalID: 1354837767242591830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 170
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee404e20861f26a90800000000000000
+      internalID: -7322024615123614482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 131
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1b7a6d92d8e01b0800000000000000
+      internalID: -5688454068487867929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 130
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2d1f343cfcc3ce0800000000000000
+      internalID: -1424034944590425347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 103
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc78b2ecbf0e6b00800000000000000
+      internalID: 823613085787389125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6530e1be35ea11940800000000000000
+      internalID: 5265181114822951766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 5
+        width: 111
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83261505c7c2c1d10800000000000000
+      internalID: 2097600438882886200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 139
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e9f68827245f030800000000000000
+      internalID: 3527798942797373073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 68
+        width: 75
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5758295b0e04670800000000000000
+      internalID: 8521057565436900796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 102
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f117b2b38e021590800000000000000
+      internalID: -7705080053675650575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 63
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbdb652d30fbdd840800000000000000
+      internalID: 5250562763718573501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 81
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9bfc8a3e6bd61a0800000000000000
+      internalID: -6814589572235675140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: burbujas-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 38
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab4a443c8cb3d2e0800000000000000
+      internalID: -2102129290693162078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      burbujas-removebg-preview_0: -5079456230639870042
+      burbujas-removebg-preview_1: -5313505127913655649
+      burbujas-removebg-preview_10: 2493974455270860412
+      burbujas-removebg-preview_11: 1478657534519531253
+      burbujas-removebg-preview_12: 8419265849290851012
+      burbujas-removebg-preview_13: 7993460257087044524
+      burbujas-removebg-preview_14: -4553721187211716639
+      burbujas-removebg-preview_15: -7182633921024299148
+      burbujas-removebg-preview_16: 3710761648603183115
+      burbujas-removebg-preview_17: 1354837767242591830
+      burbujas-removebg-preview_18: -7322024615123614482
+      burbujas-removebg-preview_19: -5688454068487867929
+      burbujas-removebg-preview_2: 5350481004123220071
+      burbujas-removebg-preview_20: -1424034944590425347
+      burbujas-removebg-preview_21: 823613085787389125
+      burbujas-removebg-preview_22: 5265181114822951766
+      burbujas-removebg-preview_23: 2097600438882886200
+      burbujas-removebg-preview_24: 3527798942797373073
+      burbujas-removebg-preview_25: 8521057565436900796
+      burbujas-removebg-preview_26: -7705080053675650575
+      burbujas-removebg-preview_27: 5250562763718573501
+      burbujas-removebg-preview_28: -6814589572235675140
+      burbujas-removebg-preview_29: -2102129290693162078
+      burbujas-removebg-preview_3: 5406806148038780881
+      burbujas-removebg-preview_4: 8652670648518968830
+      burbujas-removebg-preview_5: 6628522675255634279
+      burbujas-removebg-preview_6: 1674020393746031888
+      burbujas-removebg-preview_7: -5092556443080174452
+      burbujas-removebg-preview_8: -7066948743521128937
+      burbujas-removebg-preview_9: 1176993126408895800
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
