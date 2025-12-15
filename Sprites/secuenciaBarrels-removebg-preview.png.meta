@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: dbe8b5ef768f5654484cf2cac627a23b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1143387983566261882
+    second: secuenciaBarrels-removebg-preview_0
+  - first:
+      213: -3202224345380330877
+    second: secuenciaBarrels-removebg-preview_1
+  - first:
+      213: 2134879924334731919
+    second: secuenciaBarrels-removebg-preview_2
+  - first:
+      213: 5692166595692851277
+    second: secuenciaBarrels-removebg-preview_3
+  - first:
+      213: -7590858682639614661
+    second: secuenciaBarrels-removebg-preview_4
+  - first:
+      213: -6313701697827821100
+    second: secuenciaBarrels-removebg-preview_5
+  - first:
+      213: -349911567745302034
+    second: secuenciaBarrels-removebg-preview_6
+  - first:
+      213: 7560417977622945046
+    second: secuenciaBarrels-removebg-preview_7
+  - first:
+      213: 7374198936332550220
+    second: secuenciaBarrels-removebg-preview_8
+  - first:
+      213: 72940133743326985
+    second: secuenciaBarrels-removebg-preview_9
+  - first:
+      213: 7398561332057592499
+    second: secuenciaBarrels-removebg-preview_10
+  - first:
+      213: 8657357325644503306
+    second: secuenciaBarrels-removebg-preview_11
+  - first:
+      213: -5262394861763486969
+    second: secuenciaBarrels-removebg-preview_12
+  - first:
+      213: -7351273452577050135
+    second: secuenciaBarrels-removebg-preview_13
+  - first:
+      213: -14057328088662913
+    second: secuenciaBarrels-removebg-preview_14
+  - first:
+      213: 6808544971734598086
+    second: secuenciaBarrels-removebg-preview_15
+  - first:
+      213: -4705563949865401989
+    second: secuenciaBarrels-removebg-preview_16
+  - first:
+      213: 6199305729057131907
+    second: secuenciaBarrels-removebg-preview_17
+  - first:
+      213: 7960769139667077864
+    second: secuenciaBarrels-removebg-preview_18
+  - first:
+      213: 2953466195374033825
+    second: secuenciaBarrels-removebg-preview_19
+  - first:
+      213: -7228258811952848152
+    second: secuenciaBarrels-removebg-preview_20
+  - first:
+      213: -4693891688767888001
+    second: secuenciaBarrels-removebg-preview_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 162
+        width: 91
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ecae820512edf00800000000000000
+      internalID: 1143387983566261882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 232
+        width: 89
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3826f7a8ce96f83d0800000000000000
+      internalID: -3202224345380330877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 324
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f82a518eafd90ad10800000000000000
+      internalID: 2134879924334731919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 249
+        width: 111
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d40fd924c53aefe40800000000000000
+      internalID: 5692166595692851277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 190
+        width: 88
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d73190f3ad7a690800000000000000
+      internalID: -7590858682639614661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 110
+        width: 218
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9213bd1c93168a0800000000000000
+      internalID: -6313701697827821100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 229
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1cdb5784dd42bf0800000000000000
+      internalID: -349911567745302034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 13
+        width: 112
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d51b508100ce860800000000000000
+      internalID: 7560417977622945046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 35
+        width: 84
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c404a27ccda665660800000000000000
+      internalID: 7374198936332550220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 9
+        width: 226
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 907f3a94aa2230100800000000000000
+      internalID: 72940133743326985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 88
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b2db3e0558fca660800000000000000
+      internalID: 7398561332057592499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 101
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a099aa87e9c152870800000000000000
+      internalID: 8657357325644503306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 6
+        width: 91
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b1fbc21c738f6b0800000000000000
+      internalID: -5262394861763486969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 91
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e1b26c5eb70bf990800000000000000
+      internalID: -7351273452577050135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 84
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7cb8c04fee0ecff0800000000000000
+      internalID: -14057328088662913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 71
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1438d149fcc7e50800000000000000
+      internalID: 6808544971734598086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b71836cc48a72beb0800000000000000
+      internalID: -4705563949865401989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d8e7a17bb580650800000000000000
+      internalID: 6199305729057131907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 75
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ea8fb4ca555a7e60800000000000000
+      internalID: 7960769139667077864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 31
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abc4674bd1dcf820800000000000000
+      internalID: 2953466195374033825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 16
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2a6f058e010bb90800000000000000
+      internalID: -7228258811952848152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: secuenciaBarrels-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 14
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75e4dcd062fbdeb0800000000000000
+      internalID: -4693891688767888001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      secuenciaBarrels-removebg-preview_0: 1143387983566261882
+      secuenciaBarrels-removebg-preview_1: -3202224345380330877
+      secuenciaBarrels-removebg-preview_10: 7398561332057592499
+      secuenciaBarrels-removebg-preview_11: 8657357325644503306
+      secuenciaBarrels-removebg-preview_12: -5262394861763486969
+      secuenciaBarrels-removebg-preview_13: -7351273452577050135
+      secuenciaBarrels-removebg-preview_14: -14057328088662913
+      secuenciaBarrels-removebg-preview_15: 6808544971734598086
+      secuenciaBarrels-removebg-preview_16: -4705563949865401989
+      secuenciaBarrels-removebg-preview_17: 6199305729057131907
+      secuenciaBarrels-removebg-preview_18: 7960769139667077864
+      secuenciaBarrels-removebg-preview_19: 2953466195374033825
+      secuenciaBarrels-removebg-preview_2: 2134879924334731919
+      secuenciaBarrels-removebg-preview_20: -7228258811952848152
+      secuenciaBarrels-removebg-preview_21: -4693891688767888001
+      secuenciaBarrels-removebg-preview_3: 5692166595692851277
+      secuenciaBarrels-removebg-preview_4: -7590858682639614661
+      secuenciaBarrels-removebg-preview_5: -6313701697827821100
+      secuenciaBarrels-removebg-preview_6: -349911567745302034
+      secuenciaBarrels-removebg-preview_7: 7560417977622945046
+      secuenciaBarrels-removebg-preview_8: 7374198936332550220
+      secuenciaBarrels-removebg-preview_9: 72940133743326985
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
