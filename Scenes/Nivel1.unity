@@ -2568,7 +2568,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2fd3645c0c282054cb9056e0bf844607, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.76
   m_Pitch: 1
   Loop: 1
@@ -3069,9 +3069,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<voffset=10><size=130%><sprite=0></size></voffset>: 0
 
-    
 
-    
+
+
 
 '
   m_isRightToLeft: 0
@@ -3543,3 +3543,4 @@ SceneRoots:
   - {fileID: 7738581148643223635}
   - {fileID: 1617763717}
   - {fileID: 1176366151}
+  - {fileID: 1457722926}
