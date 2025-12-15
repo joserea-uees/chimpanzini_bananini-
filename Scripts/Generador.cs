@@ -38,8 +38,13 @@ public class Generador : MonoBehaviour
     public float minSpawnInterval = 1f;
     public float maxSpawnInterval = 3f;
 
+    [Header("Control de Generación por Movimiento")]
+    [Tooltip("Referencia al jugador. Si no se asigna, se busca automáticamente por tag 'Player'.")]
+    public GameObject player;
+
     private float nextSpawnTime;
     private float totalPairWeight = 0f;
+    private bool generacionActiva = true;
 
     void Start()
     {
@@ -51,13 +56,41 @@ public class Generador : MonoBehaviour
             return;
         }
 
+        // Buscar al jugador si no está asignado
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            if (player == null)
+            {
+                Debug.LogWarning("Generador: No se encontró el jugador. El generador funcionará sin control de movimiento.");
+            }
+        }
+
         RecalculatePairWeights();
         ScheduleNextSpawn();
     }
 
     void Update()
     {
-        if (Time.time >= nextSpawnTime)
+        // Verificar si el jugador se está moviendo hacia adelante (D) o atrás (A)
+        if (player != null)
+        {
+            bool moviendoAdelante = Input.GetKey(KeyCode.D);
+            bool moviendoAtras = Input.GetKey(KeyCode.A);
+
+            if (moviendoAdelante)
+            {
+                generacionActiva = true;
+            }
+            else if (moviendoAtras)
+            {
+                generacionActiva = false;
+            }
+            // Si no presiona ninguna tecla, mantiene el estado actual
+        }
+
+        // Solo generar si está activo
+        if (generacionActiva && Time.time >= nextSpawnTime)
         {
             SpawnItems();
             ScheduleNextSpawn();
