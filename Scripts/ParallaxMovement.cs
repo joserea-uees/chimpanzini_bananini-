@@ -17,6 +17,9 @@ public class ParallaxMovement : MonoBehaviour
     [Range(0.01f, 1f)]
     public float parallaxSpeed;
 
+    [Tooltip("Desplazamiento horizontal del parallax (positivo = más a la derecha, negativo = más a la izquierda)")]
+    public float parallaxOffsetX = 2f;  // ¡Ajusta este valor en el Inspector!
+
     void Start()
     {
         cam = Camera.main.transform;
@@ -38,17 +41,23 @@ public class ParallaxMovement : MonoBehaviour
 
     void BackSpeedCalculate(int backCount)
     {
+        farthestBack = 0f;  // ¡FIX: Inicializar para evitar errores!
+
+        // Calcular la capa más lejana (mayor distancia Z)
         for (int i = 0; i < backCount; i++) 
         {
-            if ((backgrounds[i].transform.position.z - cam.position.z) > farthestBack)
+            float zDiff = backgrounds[i].transform.position.z - cam.position.z;
+            if (zDiff > farthestBack)
             {
-                farthestBack = backgrounds[i].transform.position.z - cam.position.z;
+                farthestBack = zDiff;
             }
         }
 
+        // Calcular velocidades relativas
         for (int i = 0; i < backCount; i++) 
         {
-            backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
+            float zDiff = backgrounds[i].transform.position.z - cam.position.z;
+            backSpeed[i] = 1 - (zDiff / farthestBack);
         }
     }
 
@@ -56,13 +65,12 @@ public class ParallaxMovement : MonoBehaviour
     {
         distance = cam.position.x - camStartPos.x;
 
-        transform.position = new Vector3(cam.position.x, transform.position.y, 0f);
+        // ¡Posicionar el parallax con offset para más a la derecha!
+        transform.position = new Vector3(cam.position.x + parallaxOffsetX, transform.position.y, 0f);
 
         for (int i = 0; i < backgrounds.Length; i++)
         {
-
             float speed = backSpeed[i] * parallaxSpeed;
-            
             mat[i].SetTextureOffset("_MainTex", new Vector2(distance * speed, 0));
         }
     }
