@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             if (saltosRestantes > 0)
             {
@@ -51,9 +51,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+        void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(velocidadCorrer, rb.linearVelocity.y);
+        float movimientoHorizontal = 0f;
+        if (Input.GetKey(KeyCode.A)) movimientoHorizontal = -1f;
+        if (Input.GetKey(KeyCode.D)) movimientoHorizontal = 1f;
+
+        rb.linearVelocity = new Vector2(movimientoHorizontal * velocidadCorrer, rb.linearVelocity.y);
+
+        if (movimientoHorizontal > 0) spriteRenderer.flipX = false;
+        else if (movimientoHorizontal < 0) spriteRenderer.flipX = true;
+
+        if (Input.GetKey(KeyCode.S) && !estaEnSuelo)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y - 20f * Time.fixedDeltaTime);
+        }
     }
 
     void Saltar()
@@ -121,12 +133,10 @@ public class PlayerController : MonoBehaviour
     {
         if (esModoNatacion)
         {
-            // En Nivel3 permitimos muchos saltos (natación)
             saltosRestantes = saltosExtrasPermitidos;
         }
         else
         {
-            // En Nivel1 y Nivel2 solo 1 salto (el del suelo)
             saltosRestantes = 1;
         }
     }
