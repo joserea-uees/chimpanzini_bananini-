@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     public float velocidadAnimacionIdle = 0.09f;     
     public float velocidadAnimacionSalto = 0.08f;
 
+    [Header("Configuración de Ataque")]
+    public Sprite[] spritesAtaque;  
+    public float velocidadAnimacionAtaque = 0.05f;
+    public bool bloquearMovimientoDuranteAtaque = true;  
+
     [Header("Saltos en modo natación (solo Nivel3)")]
     public int saltosExtrasPermitidos = 999; 
 
@@ -28,9 +33,11 @@ public class PlayerController : MonoBehaviour
     private int runIndex = 0;
     private int idleIndex = 0;        
     private int jumpIndex = 0;
+    private int attackIndex = 0;  
+    private bool isAttacking = false;  
+
     private Coroutine mainAnimCoroutine;
 
-    // Buffers de input para mejor respuesta
     private float moveInput;
     private bool isMoving;
     private bool downPressed;
@@ -45,40 +52,48 @@ public class PlayerController : MonoBehaviour
         runIndex = 0;
         idleIndex = 0;  
         jumpIndex = 0;
+        attackIndex = 0;  
         ReiniciarSaltos();
         mainAnimCoroutine = StartCoroutine(MainAnimationLoop());
     }
 
     void Update()
     {
-        // Input horizontal y flip inmediato
         moveInput = 0f;
         if (Input.GetKey(KeyCode.A)) moveInput = -1f;
         if (Input.GetKey(KeyCode.D)) moveInput = 1f;
 
         isMoving = Mathf.Abs(moveInput) > 0.1f;
 
-        // Flip sprite basado en dirección (se mantiene al parar)
         if (moveInput > 0) spriteRenderer.flipX = false;
         else if (moveInput < 0) spriteRenderer.flipX = true;
 
-        // Input down
         downPressed = Input.GetKey(KeyCode.S);
 
-        // Input salto
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
         {
             Saltar();
             saltosRestantes--;
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && !isAttacking && spritesAtaque.Length > 0)
+        {
+            isAttacking = true;
+            attackIndex = 0;
+            Debug.Log("¡Ataque activado!"); 
+        }
     }
 
     void FixedUpdate()
     {
-        // Aplicar movimiento suave
-        rb.linearVelocity = new Vector2(moveInput * velocidadCorrer, rb.linearVelocity.y);
+        float finalMoveInput = moveInput;
+        if (isAttacking && bloquearMovimientoDuranteAtaque)
+        {
+            finalMoveInput = 0f;
+        }
 
-        // Caída rápida con S (solo en aire)
+        rb.linearVelocity = new Vector2(finalMoveInput * velocidadCorrer, rb.linearVelocity.y);
+
         if (downPressed && !estaEnSuelo)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y - 20f * Time.fixedDeltaTime);
@@ -87,22 +102,25 @@ public class PlayerController : MonoBehaviour
 
     void Saltar()
     {
-        // Reset velocidad Y y aplicar impulso (mantiene X)
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
-        // Reset animación de salto (para saltos múltiples)
         jumpIndex = 0;
     }
 
-    // ¡BUCLE PRINCIPAL DE ANIMACIÓN! Maneja TODO
     IEnumerator MainAnimationLoop()
     {
         while (true)
         {
+            if (isAttacking)
+            {
+                UpdateAttackFrame();
+                yield return new WaitForSeconds(velocidadAnimacionAtaque);
+                continue;  
+            }
+
             if (!estaEnSuelo)
             {
-                // Animación de salto/caída (cicla hasta último frame)
                 UpdateJumpFrame();
                 yield return new WaitForSeconds(velocidadAnimacionSalto);
             }
@@ -110,17 +128,34 @@ public class PlayerController : MonoBehaviour
             {
                 if (isMoving)
                 {
-                    // CORRER solo cuando te mueves (¡AHORA MÁS RÁPIDA!)
                     UpdateRunFrame();
                     yield return new WaitForSeconds(velocidadAnimacionCorrer);
                 }
                 else
                 {
-                    // IDLE/PARADO con animación completa o fallback!
                     UpdateIdleFrame();
                     yield return new WaitForSeconds(velocidadAnimacionIdle);
                 }
             }
+        }
+    }
+
+    void UpdateAttackFrame()
+    {
+        if (spritesAtaque.Length > 0)
+        {
+            spriteRenderer.sprite = spritesAtaque[attackIndex];
+            attackIndex++;
+            if (attackIndex >= spritesAtaque.Length)
+            {
+                isAttacking = false;
+                attackIndex = 0;
+                Debug.Log("¡Ataque terminado!"); 
+            }
+        }
+        else
+        {
+            isAttacking = false;
         }
     }
 
@@ -133,18 +168,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Función para animar IDLE
     void UpdateIdleFrame()
     {
         if (spritesIdle.Length > 0)
         {
-            // Usa spritesIdle si los tienes
             spriteRenderer.sprite = spritesIdle[idleIndex];
             idleIndex = (idleIndex + 1) % spritesIdle.Length;
         }
         else
         {
-            // FALLBACK: Primer sprite de correr como pose parada
             if (spritesCorrer.Length > 0)
             {
                 spriteRenderer.sprite = spritesCorrer[0];
@@ -173,6 +205,7 @@ public class PlayerController : MonoBehaviour
             ReiniciarSaltos();
             runIndex = 0;
             idleIndex = 0;  
+            attackIndex = 0;  
         }
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
