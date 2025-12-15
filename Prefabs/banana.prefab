@@ -116,6 +116,8 @@ MonoBehaviour:
   - {fileID: -7457592007906401502, guid: 178fa31825b9ba645904f2805d88909c, type: 3}
   frameTime: 0.05
   points: 1
+  sonidoRecoger: {fileID: 8300000, guid: e7d7aaf4fcdb59c4ea0af0028b211225, type: 3}
+  volumenSonido: 1.56
 --- !u!61 &-1058408819306889455
 BoxCollider2D:
   m_ObjectHideFlags: 0
