@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;       
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -10,23 +10,37 @@ public class PlayerController : MonoBehaviour
 
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
+    public Sprite[] spritesIdle;      
     public Sprite[] spritesSaltar;       
-    public float velocidadAnimacionCorrer = 0.08f;
-    public float velocidadAnimacionSalto = 0.12f;
+    public float velocidadAnimacionCorrer = 0.03f;  
+    public float velocidadAnimacionIdle = 0.09f;     
+    public float velocidadAnimacionSalto = 0.08f;
+
+    [Header("Configuración de Ataque")]
+    public Sprite[] spritesAtaque;  
+    public float velocidadAnimacionAtaque = 0.05f;
+    public bool bloquearMovimientoDuranteAtaque = true;  
 
     [Header("Saltos en modo natación (solo Nivel3)")]
     public int saltosExtrasPermitidos = 999; 
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private bool estaEnSuelo = true;
+    private int groundContacts = 0;
+    private bool estaEnSuelo => groundContacts > 0;
     private int saltosRestantes; 
 
-    private int indiceAnimacion = 0;
-    private int indiceAnimacionSalto = 0;
+    private int runIndex = 0;
+    private int idleIndex = 0;        
+    private int jumpIndex = 0;
+    private int attackIndex = 0;  
+    private bool isAttacking = false;  
 
-    private Coroutine coroutineCorrer;
-    private Coroutine coroutineSaltar;
+    private Coroutine mainAnimCoroutine;
+
+    private float moveInput;
+    private bool isMoving;
+    private bool downPressed;
 
     private bool esModoNatacion => SceneManager.GetActiveScene().name == "Nivel3";
 
@@ -35,34 +49,52 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        runIndex = 0;
+        idleIndex = 0;  
+        jumpIndex = 0;
+        attackIndex = 0;  
         ReiniciarSaltos();
-        coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
+        mainAnimCoroutine = StartCoroutine(MainAnimationLoop());
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        moveInput = 0f;
+        if (Input.GetKey(KeyCode.A)) moveInput = -1f;
+        if (Input.GetKey(KeyCode.D)) moveInput = 1f;
+
+        isMoving = Mathf.Abs(moveInput) > 0.1f;
+
+        if (moveInput > 0) spriteRenderer.flipX = false;
+        else if (moveInput < 0) spriteRenderer.flipX = true;
+
+        downPressed = Input.GetKey(KeyCode.S);
+
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
         {
-            if (saltosRestantes > 0)
-            {
-                Saltar();
-                saltosRestantes--;
-            }
+            Saltar();
+            saltosRestantes--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && !isAttacking && spritesAtaque.Length > 0)
+        {
+            isAttacking = true;
+            attackIndex = 0;
+            Debug.Log("¡Ataque activado!"); 
         }
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
-        float movimientoHorizontal = 0f;
-        if (Input.GetKey(KeyCode.A)) movimientoHorizontal = -1f;
-        if (Input.GetKey(KeyCode.D)) movimientoHorizontal = 1f;
+        float finalMoveInput = moveInput;
+        if (isAttacking && bloquearMovimientoDuranteAtaque)
+        {
+            finalMoveInput = 0f;
+        }
 
-        rb.linearVelocity = new Vector2(movimientoHorizontal * velocidadCorrer, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(finalMoveInput * velocidadCorrer, rb.linearVelocity.y);
 
-        if (movimientoHorizontal > 0) spriteRenderer.flipX = false;
-        else if (movimientoHorizontal < 0) spriteRenderer.flipX = true;
-
-        if (Input.GetKey(KeyCode.S) && !estaEnSuelo)
+        if (downPressed && !estaEnSuelo)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y - 20f * Time.fixedDeltaTime);
         }
@@ -70,45 +102,98 @@ public class PlayerController : MonoBehaviour
 
     void Saltar()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
-        if (estaEnSuelo)
-        {
-            estaEnSuelo = false;
-            indiceAnimacionSalto = 0;
-            if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
-            coroutineSaltar = StartCoroutine(RutinaAnimacionSalto());
-        }
+        jumpIndex = 0;
     }
 
-    IEnumerator RutinaAnimacionCorrer()
+    IEnumerator MainAnimationLoop()
     {
         while (true)
         {
-            if (spritesCorrer.Length > 0)
+            if (isAttacking)
             {
-                spriteRenderer.sprite = spritesCorrer[indiceAnimacion];
-                indiceAnimacion = (indiceAnimacion + 1) % spritesCorrer.Length;
+                UpdateAttackFrame();
+                yield return new WaitForSeconds(velocidadAnimacionAtaque);
+                continue;  
             }
-            yield return new WaitForSeconds(velocidadAnimacionCorrer);
+
+            if (!estaEnSuelo)
+            {
+                UpdateJumpFrame();
+                yield return new WaitForSeconds(velocidadAnimacionSalto);
+            }
+            else
+            {
+                if (isMoving)
+                {
+                    UpdateRunFrame();
+                    yield return new WaitForSeconds(velocidadAnimacionCorrer);
+                }
+                else
+                {
+                    UpdateIdleFrame();
+                    yield return new WaitForSeconds(velocidadAnimacionIdle);
+                }
+            }
         }
     }
 
-    IEnumerator RutinaAnimacionSalto()
+    void UpdateAttackFrame()
     {
-        while (!estaEnSuelo) 
+        if (spritesAtaque.Length > 0)
         {
-            if (spritesSaltar.Length > 0)
+            spriteRenderer.sprite = spritesAtaque[attackIndex];
+            attackIndex++;
+            if (attackIndex >= spritesAtaque.Length)
             {
-                spriteRenderer.sprite = spritesSaltar[indiceAnimacionSalto];
-                indiceAnimacionSalto++;
-                if (indiceAnimacionSalto >= spritesSaltar.Length)
-                {
-                    indiceAnimacionSalto = spritesSaltar.Length - 1; 
-                }
+                isAttacking = false;
+                attackIndex = 0;
+                Debug.Log("¡Ataque terminado!"); 
             }
-            yield return new WaitForSeconds(velocidadAnimacionSalto);
+        }
+        else
+        {
+            isAttacking = false;
+        }
+    }
+
+    void UpdateRunFrame()
+    {
+        if (spritesCorrer.Length > 0)
+        {
+            spriteRenderer.sprite = spritesCorrer[runIndex];
+            runIndex = (runIndex + 1) % spritesCorrer.Length;
+        }
+    }
+
+    void UpdateIdleFrame()
+    {
+        if (spritesIdle.Length > 0)
+        {
+            spriteRenderer.sprite = spritesIdle[idleIndex];
+            idleIndex = (idleIndex + 1) % spritesIdle.Length;
+        }
+        else
+        {
+            if (spritesCorrer.Length > 0)
+            {
+                spriteRenderer.sprite = spritesCorrer[0];
+            }
+        }
+    }
+
+    void UpdateJumpFrame()
+    {
+        if (spritesSaltar.Length > 0)
+        {
+            spriteRenderer.sprite = spritesSaltar[jumpIndex];
+            jumpIndex++;
+            if (jumpIndex >= spritesSaltar.Length)
+            {
+                jumpIndex = spritesSaltar.Length - 1;
+            }
         }
     }
 
@@ -116,16 +201,24 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
-            estaEnSuelo = true;
+            groundContacts++;
             ReiniciarSaltos();
-
-            if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
-            coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
+            runIndex = 0;
+            idleIndex = 0;  
+            attackIndex = 0;  
         }
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
         {
             ReiniciarNivel();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            groundContacts--;
         }
     }
 
@@ -148,7 +241,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
-        if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
+        if (mainAnimCoroutine != null)
+        {
+            StopCoroutine(mainAnimCoroutine);
+        }
     }
 }
