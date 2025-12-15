@@ -477,6 +477,14 @@ MonoBehaviour:
   velocidadAnimacionCorrer: 0.03
   velocidadAnimacionIdle: 0.09
   velocidadAnimacionSalto: 0.08
+  spritesAtaque:
+  - {fileID: 827538889749247048, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
+  - {fileID: -5010287565412364656, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
+  - {fileID: -5463148037355797382, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
+  - {fileID: -5182820943178688908, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
+  - {fileID: 7402079830906333199, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
+  velocidadAnimacionAtaque: 0.05
+  bloquearMovimientoDuranteAtaque: 1
   saltosExtrasPermitidos: 999
 --- !u!50 &189019139
 Rigidbody2D:
