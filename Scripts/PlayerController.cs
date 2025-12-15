@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections;       
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -10,23 +10,30 @@ public class PlayerController : MonoBehaviour
 
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
+    public Sprite[] spritesIdle;      
     public Sprite[] spritesSaltar;       
-    public float velocidadAnimacionCorrer = 0.08f;
-    public float velocidadAnimacionSalto = 0.12f;
+    public float velocidadAnimacionCorrer = 0.03f;  
+    public float velocidadAnimacionIdle = 0.09f;     
+    public float velocidadAnimacionSalto = 0.08f;
 
     [Header("Saltos en modo natación (solo Nivel3)")]
     public int saltosExtrasPermitidos = 999; 
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
-    private bool estaEnSuelo = true;
+    private int groundContacts = 0;
+    private bool estaEnSuelo => groundContacts > 0;
     private int saltosRestantes; 
 
-    private int indiceAnimacion = 0;
-    private int indiceAnimacionSalto = 0;
+    private int runIndex = 0;
+    private int idleIndex = 0;        
+    private int jumpIndex = 0;
+    private Coroutine mainAnimCoroutine;
 
-    private Coroutine coroutineCorrer;
-    private Coroutine coroutineSaltar;
+    // Buffers de input para mejor respuesta
+    private float moveInput;
+    private bool isMoving;
+    private bool downPressed;
 
     private bool esModoNatacion => SceneManager.GetActiveScene().name == "Nivel3";
 
@@ -35,34 +42,44 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        runIndex = 0;
+        idleIndex = 0;  
+        jumpIndex = 0;
         ReiniciarSaltos();
-        coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
+        mainAnimCoroutine = StartCoroutine(MainAnimationLoop());
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        // Input horizontal y flip inmediato
+        moveInput = 0f;
+        if (Input.GetKey(KeyCode.A)) moveInput = -1f;
+        if (Input.GetKey(KeyCode.D)) moveInput = 1f;
+
+        isMoving = Mathf.Abs(moveInput) > 0.1f;
+
+        // Flip sprite basado en dirección (se mantiene al parar)
+        if (moveInput > 0) spriteRenderer.flipX = false;
+        else if (moveInput < 0) spriteRenderer.flipX = true;
+
+        // Input down
+        downPressed = Input.GetKey(KeyCode.S);
+
+        // Input salto
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space)) && saltosRestantes > 0)
         {
-            if (saltosRestantes > 0)
-            {
-                Saltar();
-                saltosRestantes--;
-            }
+            Saltar();
+            saltosRestantes--;
         }
     }
 
-        void FixedUpdate()
+    void FixedUpdate()
     {
-        float movimientoHorizontal = 0f;
-        if (Input.GetKey(KeyCode.A)) movimientoHorizontal = -1f;
-        if (Input.GetKey(KeyCode.D)) movimientoHorizontal = 1f;
+        // Aplicar movimiento suave
+        rb.linearVelocity = new Vector2(moveInput * velocidadCorrer, rb.linearVelocity.y);
 
-        rb.linearVelocity = new Vector2(movimientoHorizontal * velocidadCorrer, rb.linearVelocity.y);
-
-        if (movimientoHorizontal > 0) spriteRenderer.flipX = false;
-        else if (movimientoHorizontal < 0) spriteRenderer.flipX = true;
-
-        if (Input.GetKey(KeyCode.S) && !estaEnSuelo)
+        // Caída rápida con S (solo en aire)
+        if (downPressed && !estaEnSuelo)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y - 20f * Time.fixedDeltaTime);
         }
@@ -70,45 +87,81 @@ public class PlayerController : MonoBehaviour
 
     void Saltar()
     {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); 
+        // Reset velocidad Y y aplicar impulso (mantiene X)
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
-        if (estaEnSuelo)
-        {
-            estaEnSuelo = false;
-            indiceAnimacionSalto = 0;
-            if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
-            coroutineSaltar = StartCoroutine(RutinaAnimacionSalto());
-        }
+        // Reset animación de salto (para saltos múltiples)
+        jumpIndex = 0;
     }
 
-    IEnumerator RutinaAnimacionCorrer()
+    // ¡BUCLE PRINCIPAL DE ANIMACIÓN! Maneja TODO
+    IEnumerator MainAnimationLoop()
     {
         while (true)
         {
-            if (spritesCorrer.Length > 0)
+            if (!estaEnSuelo)
             {
-                spriteRenderer.sprite = spritesCorrer[indiceAnimacion];
-                indiceAnimacion = (indiceAnimacion + 1) % spritesCorrer.Length;
+                // Animación de salto/caída (cicla hasta último frame)
+                UpdateJumpFrame();
+                yield return new WaitForSeconds(velocidadAnimacionSalto);
             }
-            yield return new WaitForSeconds(velocidadAnimacionCorrer);
+            else
+            {
+                if (isMoving)
+                {
+                    // CORRER solo cuando te mueves (¡AHORA MÁS RÁPIDA!)
+                    UpdateRunFrame();
+                    yield return new WaitForSeconds(velocidadAnimacionCorrer);
+                }
+                else
+                {
+                    // IDLE/PARADO con animación completa o fallback!
+                    UpdateIdleFrame();
+                    yield return new WaitForSeconds(velocidadAnimacionIdle);
+                }
+            }
         }
     }
 
-    IEnumerator RutinaAnimacionSalto()
+    void UpdateRunFrame()
     {
-        while (!estaEnSuelo) 
+        if (spritesCorrer.Length > 0)
         {
-            if (spritesSaltar.Length > 0)
+            spriteRenderer.sprite = spritesCorrer[runIndex];
+            runIndex = (runIndex + 1) % spritesCorrer.Length;
+        }
+    }
+
+    // Función para animar IDLE
+    void UpdateIdleFrame()
+    {
+        if (spritesIdle.Length > 0)
+        {
+            // Usa spritesIdle si los tienes
+            spriteRenderer.sprite = spritesIdle[idleIndex];
+            idleIndex = (idleIndex + 1) % spritesIdle.Length;
+        }
+        else
+        {
+            // FALLBACK: Primer sprite de correr como pose parada
+            if (spritesCorrer.Length > 0)
             {
-                spriteRenderer.sprite = spritesSaltar[indiceAnimacionSalto];
-                indiceAnimacionSalto++;
-                if (indiceAnimacionSalto >= spritesSaltar.Length)
-                {
-                    indiceAnimacionSalto = spritesSaltar.Length - 1; 
-                }
+                spriteRenderer.sprite = spritesCorrer[0];
             }
-            yield return new WaitForSeconds(velocidadAnimacionSalto);
+        }
+    }
+
+    void UpdateJumpFrame()
+    {
+        if (spritesSaltar.Length > 0)
+        {
+            spriteRenderer.sprite = spritesSaltar[jumpIndex];
+            jumpIndex++;
+            if (jumpIndex >= spritesSaltar.Length)
+            {
+                jumpIndex = spritesSaltar.Length - 1;
+            }
         }
     }
 
@@ -116,16 +169,23 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Suelo"))
         {
-            estaEnSuelo = true;
+            groundContacts++;
             ReiniciarSaltos();
-
-            if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
-            coroutineCorrer = StartCoroutine(RutinaAnimacionCorrer());
+            runIndex = 0;
+            idleIndex = 0;  
         }
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
         {
             ReiniciarNivel();
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            groundContacts--;
         }
     }
 
@@ -148,7 +208,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (coroutineCorrer != null) StopCoroutine(coroutineCorrer);
-        if (coroutineSaltar != null) StopCoroutine(coroutineSaltar);
+        if (mainAnimCoroutine != null)
+        {
+            StopCoroutine(mainAnimCoroutine);
+        }
     }
 }
