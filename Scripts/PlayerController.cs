@@ -210,9 +210,28 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
         {
-            ReiniciarNivel();
+            Morir();
         }
+
     }
+
+    bool invulnerable = false;
+
+    IEnumerator Invulnerabilidad(float tiempo)
+    {
+        invulnerable = true;
+        yield return new WaitForSeconds(tiempo);
+        invulnerable = false;
+    }
+    void Morir()
+    {
+        if (invulnerable) return;
+
+        LifeManager.instance.PlayerDied();
+        StartCoroutine(Invulnerabilidad(1f));
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
+    }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -232,11 +251,6 @@ public class PlayerController : MonoBehaviour
         {
             saltosRestantes = 1;
         }
-    }
-
-    void ReiniciarNivel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnDestroy()
