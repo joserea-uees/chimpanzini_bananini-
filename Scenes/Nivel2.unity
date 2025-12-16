@@ -284,6 +284,7 @@ MonoBehaviour:
   - {fileID: -577393758743874258, guid: bbe74357212cb4d4d9cdbb2a6f2e420c, type: 3}
   - {fileID: -8306100378673917722, guid: bbe74357212cb4d4d9cdbb2a6f2e420c, type: 3}
   - {fileID: -1965743729793077632, guid: bbe74357212cb4d4d9cdbb2a6f2e420c, type: 3}
+  spritesIdle: []
   spritesSaltar:
   - {fileID: 1647546620176882792, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
   - {fileID: 2323377139849638381, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
@@ -292,7 +293,11 @@ MonoBehaviour:
   - {fileID: -119128691511076639, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
   - {fileID: 3059123441113604298, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
   velocidadAnimacionCorrer: 0.08
+  velocidadAnimacionIdle: 0.09
   velocidadAnimacionSalto: 0.15
+  spritesAtaque: []
+  velocidadAnimacionAtaque: 0.05
+  bloquearMovimientoDuranteAtaque: 1
   saltosExtrasPermitidos: 999
 --- !u!50 &189019139
 Rigidbody2D:
@@ -1567,11 +1572,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 565056180351356305, guid: 53e939d50f4c0d24fa375268cb635517, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.3785
+      value: 9.85
       objectReference: {fileID: 0}
     - target: {fileID: 565056180351356305, guid: 53e939d50f4c0d24fa375268cb635517, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.9117
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 565056180351356305, guid: 53e939d50f4c0d24fa375268cb635517, type: 3}
       propertyPath: m_LocalPosition.z
