@@ -284,7 +284,6 @@ public class PlayerController : MonoBehaviour
 
         bool esUltimaVida = LifeManager.instance.PlayerDied();
         IniciarDaño();
-        StopCoroutine(nameof(Invulnerabilidad));
         StartCoroutine(Invulnerabilidad());
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
         if (esUltimaVida)
@@ -353,22 +352,18 @@ public class PlayerController : MonoBehaviour
     {
         if (muerteDefinitiva) yield break;
         muerteDefinitiva = true;
-        // Esperar animación de daño final
         if (spritesDaño != null && spritesDaño.Length > 0)
         {
             yield return new WaitForSeconds(
                 spritesDaño.Length * velocidadAnimacionDaño
             );
         }
-
-        // Forzar caída
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 5f;
         rb.AddForce(Vector2.down * fuerzaCaidaMuerte, ForceMode2D.Impulse);
 
         IgnorarSuelo(true);
 
-        // Esperar a que salga de la cámara
         Camera cam = Camera.main;
 
         while (true)
@@ -406,6 +401,7 @@ public class PlayerController : MonoBehaviour
     void MostrarVentanaGameOver()
     {
         Time.timeScale = 0f;  
+        AudioListener.pause = true;
         gameOverPanel.SetActive(true);
     }
 
