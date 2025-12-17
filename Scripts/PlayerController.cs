@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
 public class PlayerController : MonoBehaviour
 {
     [Header("Configuración de Movimiento")]
@@ -223,7 +222,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(tiempo);
         invulnerable = false;
     }
-    void Morir()
+    public void Morir()
     {
         if (invulnerable) return;
 
