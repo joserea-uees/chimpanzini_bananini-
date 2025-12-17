@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LifeManager : MonoBehaviour
 {
     public static LifeManager instance;
+    public PlayerController playerController;
 
     public int maxLives = 3;
     private int currentLives;
@@ -40,17 +41,17 @@ public class LifeManager : MonoBehaviour
         livesText.text = hearts;
     }
 
-    public void PlayerDied()
+    public bool PlayerDied()
     {
         currentLives--;
+        UpdateLivesUI();
 
         if (currentLives <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(playerController.MuerteFinal()); 
         }
-        else
-        {
-            UpdateLivesUI();
-        }
+
+        return false;
     }
+
 }

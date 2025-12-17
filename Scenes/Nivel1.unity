@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 189019137}
   - component: {fileID: 189019138}
   - component: {fileID: 189019139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -501,6 +501,10 @@ MonoBehaviour:
   velocidadAnimacionAtaque: 0.05
   bloquearMovimientoDuranteAtaque: 0
   saltosExtrasPermitidos: 999
+  tiempoInvulnerable: 1
+  intervaloParpadeo: 0.1
+  fuerzaCaidaMuerte: 10
+  gameOverPanel: {fileID: 599211812}
 --- !u!50 &189019139
 Rigidbody2D:
   serializedVersion: 5
@@ -1088,6 +1092,81 @@ RectTransform:
   m_AnchoredPosition: {x: -405.3, y: 166.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &599211812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 599211813}
+  - component: {fileID: 599211815}
+  - component: {fileID: 599211814}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &599211813
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599211812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1176366151}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &599211814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599211812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &599211815
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599211812}
+  m_CullTransparentMesh: 1
 --- !u!1001 &613235401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2242,6 +2321,7 @@ RectTransform:
   m_Children:
   - {fileID: 2106216123}
   - {fileID: 571279418}
+  - {fileID: 599211813}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2260,7 +2340,7 @@ GameObject:
   - component: {fileID: 1240659876}
   - component: {fileID: 1240659875}
   - component: {fileID: 1240659874}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -3497,6 +3577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533177ba5ed095f4d81418eaf671e6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeManager
+  playerController: {fileID: 189019138}
   maxLives: 3
   livesText: {fileID: 571279416}
 --- !u!4 &2008798567
@@ -3571,7 +3652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<voffset=10><size=130%><sprite=0></size></voffset>: 0
+  m_text: '<voffset=10><size=130%><sprite=0></size></voffset> 0
 
 
 
@@ -3736,6 +3817,10 @@ PrefabInstance:
     - target: {fileID: 714951017799212478, guid: 70fe9f0b2b5280e4696c337a39650221, type: 3}
       propertyPath: m_Offset.y
       value: -0.15899464
+      objectReference: {fileID: 0}
+    - target: {fileID: 714951017799212478, guid: 70fe9f0b2b5280e4696c337a39650221, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4472779435035643180, guid: 70fe9f0b2b5280e4696c337a39650221, type: 3}
       propertyPath: m_Name

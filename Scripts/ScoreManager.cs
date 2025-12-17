@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
 
         if (scoreText != null)
         {
-            scoreText.text = "<voffset=10><size=130%><sprite=0></size></voffset>: " + score;
+            scoreText.text = "<voffset=10><size=130%><sprite=0></size></voffset> " + score;
         }
 
         // Solo notificamos una vez cuando llegamos a 10 o más

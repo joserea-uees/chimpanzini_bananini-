@@ -24,8 +24,19 @@ public class PlayerController : MonoBehaviour
     public bool bloquearMovimientoDuranteAtaque = true;  
 
     private bool recibiendoDaño = false;
+
     [Header("Saltos en modo natación (solo Nivel3)")]
     public int saltosExtrasPermitidos = 999; 
+
+    [Header("Invulnerabilidad")]
+    [SerializeField] private float tiempoInvulnerable = 1f;
+    [SerializeField] private float intervaloParpadeo = 0.1f;
+    private bool invulnerable = false;
+    private Coroutine parpadeoCoroutine;
+    [Header("Muerte Definitiva")]
+    public float fuerzaCaidaMuerte = 10f;
+
+    private bool muerteDefinitiva = false;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -39,6 +50,8 @@ public class PlayerController : MonoBehaviour
     private int attackIndex = 0;  
     private int dañoIndex = 0;
     private bool isAttacking = false;  
+    public GameObject gameOverPanel;
+
 
     private Coroutine mainAnimCoroutine;
 
@@ -238,25 +251,62 @@ public class PlayerController : MonoBehaviour
             Morir();
         }
 
-    }
+    }   
 
-    bool invulnerable = false;
-
-    IEnumerator Invulnerabilidad(float tiempo)
+    IEnumerator Invulnerabilidad()
     {
         invulnerable = true;
-        yield return new WaitForSeconds(tiempo);
+
+        parpadeoCoroutine = StartCoroutine(Parpadeo());
+
+        yield return new WaitForSeconds(tiempoInvulnerable);
+
         invulnerable = false;
+
+        if (parpadeoCoroutine != null)
+            StopCoroutine(parpadeoCoroutine);
+
+        spriteRenderer.enabled = true;
+    }
+
+    IEnumerator Parpadeo()
+    {
+        while (true)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(intervaloParpadeo);
+        }
     }
 
     public void Morir()
     {
-        if (invulnerable) return;
+        if (invulnerable || muerteDefinitiva) return;
 
-         LifeManager.instance.PlayerDied();
+        bool esUltimaVida = LifeManager.instance.PlayerDied();
         IniciarDaño();
-        StartCoroutine(Invulnerabilidad(1f));
+        StopCoroutine(nameof(Invulnerabilidad));
+        StartCoroutine(Invulnerabilidad());
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
+        if (esUltimaVida)
+        {
+            StartCoroutine(ReiniciarDespuesDeDaño(true));
+        }
+        else
+        {
+            StartCoroutine(ReiniciarDespuesDeDaño(false));
+        }
+    }
+
+    IEnumerator ReiniciarDespuesDeDaño(bool muerteDefinitiva)
+    {
+        yield return new WaitForSeconds(
+            spritesDaño.Length * velocidadAnimacionDaño
+        );
+
+        if (muerteDefinitiva)
+        {
+            StartCoroutine(MuerteFinal());
+        }
     }
 
 
@@ -298,6 +348,76 @@ public class PlayerController : MonoBehaviour
         recibiendoDaño = true;
         dañoIndex = 0;
     }
+
+    public IEnumerator MuerteFinal()
+    {
+        if (muerteDefinitiva) yield break;
+        muerteDefinitiva = true;
+        // Esperar animación de daño final
+        if (spritesDaño != null && spritesDaño.Length > 0)
+        {
+            yield return new WaitForSeconds(
+                spritesDaño.Length * velocidadAnimacionDaño
+            );
+        }
+
+        // Forzar caída
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 5f;
+        rb.AddForce(Vector2.down * fuerzaCaidaMuerte, ForceMode2D.Impulse);
+
+        IgnorarSuelo(true);
+
+        // Esperar a que salga de la cámara
+        Camera cam = Camera.main;
+
+        while (true)
+        {
+            Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
+
+            if (viewPos.y < -0.2f)
+            {
+                MostrarVentanaGameOver();
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+
+    void LateUpdate()
+    {
+        if (!muerteDefinitiva) return;
+
+        if (!EstaEnPantalla())
+        {
+            MostrarVentanaGameOver();
+            muerteDefinitiva = false;
+        }
+    }
+
+    bool EstaEnPantalla()
+    {
+    Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+    return viewPos.y > -0.2f;
+    }
+
+    void MostrarVentanaGameOver()
+    {
+        Time.timeScale = 0f;  
+        gameOverPanel.SetActive(true);
+    }
+
+    void IgnorarSuelo(bool ignorar)
+    {
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("Ground"),
+            ignorar
+        );
+    }
+
 
     private void OnDestroy()
     {
