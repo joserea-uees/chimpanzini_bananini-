@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(tiempo);
         invulnerable = false;
     }
-    void Morir()
+    public void Morir()
     {
         if (invulnerable) return;
 
