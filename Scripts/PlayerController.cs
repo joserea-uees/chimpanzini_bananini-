@@ -11,16 +11,19 @@ public class PlayerController : MonoBehaviour
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
     public Sprite[] spritesIdle;      
-    public Sprite[] spritesSaltar;       
+    public Sprite[] spritesSaltar;     
+    public Sprite[] spritesDaño;
     public float velocidadAnimacionCorrer = 0.03f;  
     public float velocidadAnimacionIdle = 0.09f;     
     public float velocidadAnimacionSalto = 0.08f;
+    public float velocidadAnimacionDaño = 0.08f;
 
     [Header("Configuración de Ataque")]
     public Sprite[] spritesAtaque;  
     public float velocidadAnimacionAtaque = 0.05f;
     public bool bloquearMovimientoDuranteAtaque = true;  
 
+    private bool recibiendoDaño = false;
     [Header("Saltos en modo natación (solo Nivel3)")]
     public int saltosExtrasPermitidos = 999; 
 
@@ -34,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private int idleIndex = 0;        
     private int jumpIndex = 0;
     private int attackIndex = 0;  
+    private int dañoIndex = 0;
     private bool isAttacking = false;  
 
     private Coroutine mainAnimCoroutine;
@@ -112,6 +116,12 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            if (recibiendoDaño)
+            {
+                UpdateDañoFrame();
+                yield return new WaitForSeconds(velocidadAnimacionDaño);
+                continue;
+            }
             if (isAttacking)
             {
                 UpdateAttackFrame();
@@ -197,6 +207,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void UpdateDañoFrame()
+    {
+        if (spritesDaño.Length > 0)
+        {
+            spriteRenderer.sprite = spritesDaño[dañoIndex];
+            dañoIndex++;
+
+            if (dañoIndex >= spritesDaño.Length)
+            {
+                dañoIndex = 0;
+                recibiendoDaño = false;
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
@@ -223,15 +248,30 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(tiempo);
         invulnerable = false;
     }
+
     public void Morir()
     {
         if (invulnerable) return;
 
-        LifeManager.instance.PlayerDied();
+         LifeManager.instance.PlayerDied();
+        IniciarDaño();
         StartCoroutine(Invulnerabilidad(1f));
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
     }
 
+
+    IEnumerator AnimacionDaño()
+    {
+        recibiendoDaño = true;
+
+        for (int i = 0; i < spritesDaño.Length; i++)
+        {
+            spriteRenderer.sprite = spritesDaño[i];
+            yield return new WaitForSeconds(velocidadAnimacionDaño);
+        }
+
+        recibiendoDaño = false;
+    }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -251,6 +291,12 @@ public class PlayerController : MonoBehaviour
         {
             saltosRestantes = 1;
         }
+    }
+
+    void IniciarDaño()
+    {
+        recibiendoDaño = true;
+        dañoIndex = 0;
     }
 
     private void OnDestroy()

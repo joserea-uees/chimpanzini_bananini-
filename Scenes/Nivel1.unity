@@ -480,9 +480,18 @@ MonoBehaviour:
   - {fileID: -2984119660015178358, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
   - {fileID: 2476702121017769511, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
   - {fileID: -119128691511076639, guid: 10f6e8ba9e84a8b47bb428d78144f6bf, type: 3}
+  "spritesDa\xF1o":
+  - {fileID: 6327578175764539422, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: -4407979361025910873, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: 5986740560975377063, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: -6262424229456928617, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: 3691147706034676591, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: -8603470679556058083, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
+  - {fileID: -7152766214784501732, guid: da20b72dfd99cff4ea97bcf0b718c034, type: 3}
   velocidadAnimacionCorrer: 0.03
   velocidadAnimacionIdle: 0.09
   velocidadAnimacionSalto: 0.08
+  "velocidadAnimacionDa\xF1o": 0.1
   spritesAtaque:
   - {fileID: 827538889749247048, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
   - {fileID: -5010287565412364656, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
