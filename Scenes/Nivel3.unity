@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 757358056}
   - component: {fileID: 757358058}
   - component: {fileID: 757358057}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}

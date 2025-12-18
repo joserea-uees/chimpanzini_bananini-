@@ -220,7 +220,8 @@ MonoBehaviour:
   "da\xF1oAlPlayer": 1
   knockbackFuerza: 5
   stunDuracion: 0.5
-  spritesCaminar: []
+  spritesCaminar:
+  - {fileID: 0}
   spritesIdle: []
   "spritesDa\xF1o": []
   spriteNormal: {fileID: -6777291340735292879, guid: 2fa4636c85eee8c4e8b12cddb2ee40c7, type: 3}
