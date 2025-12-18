@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 1e362c573d1ff2d4196a82da473d20f4
+guid: 51a3d9a24a7a3aa439b83454ff184a40
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5622736784300449979
-    second: tralalero_tralala-removebg-preview_0
+      213: 1844216351685785912
+    second: brbr_batapimAttack-removebg-preview_0
   - first:
-      213: 1399262945367532823
-    second: tralalero_tralala-removebg-preview_1
+      213: 4834506819189324140
+    second: brbr_batapimAttack-removebg-preview_1
   - first:
-      213: 3262008229851157597
-    second: tralalero_tralala-removebg-preview_2
+      213: -3066751178739682662
+    second: brbr_batapimAttack-removebg-preview_2
+  - first:
+      213: -1575392200595849807
+    second: brbr_batapimAttack-removebg-preview_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_0
+      name: brbr_batapimAttack-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 414
-        height: 347
+        x: 1
+        y: 17
+        width: 177
+        height: 217
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb020c59059f70e40800000000000000
-      internalID: 5622736784300449979
+      spriteID: 839b2333009f79910800000000000000
+      internalID: 1844216351685785912
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_1
+      name: brbr_batapimAttack-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 125
-        width: 184
-        height: 103
+        x: 181
+        y: 0
+        width: 97
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 715aff53c3e2b6310800000000000000
-      internalID: 1399262945367532823
+      spriteID: c69bbf5765e971340800000000000000
+      internalID: 4834506819189324140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_2
+      name: brbr_batapimAttack-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 427
-        y: 10
-        width: 234
-        height: 353
+        x: 291
+        y: 57
+        width: 95
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +168,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d54dda2c33bf44d20800000000000000
-      internalID: 3262008229851157597
+      spriteID: a92f5b02d06b075d0800000000000000
+      internalID: -3066751178739682662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brbr_batapimAttack-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1
+        width: 171
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd309de325132ae0800000000000000
+      internalID: -1575392200595849807
       vertices: []
       indices: 
       edges: []
@@ -185,9 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tralalero_tralala-removebg-preview_0: 5622736784300449979
-      tralalero_tralala-removebg-preview_1: 1399262945367532823
-      tralalero_tralala-removebg-preview_2: 3262008229851157597
+      brbr_batapimAttack-removebg-preview_0: 1844216351685785912
+      brbr_batapimAttack-removebg-preview_1: 4834506819189324140
+      brbr_batapimAttack-removebg-preview_2: -3066751178739682662
+      brbr_batapimAttack-removebg-preview_3: -1575392200595849807
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

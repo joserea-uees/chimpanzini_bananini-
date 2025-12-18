@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 1e362c573d1ff2d4196a82da473d20f4
+guid: 92e076d5ee58db64e98e26aabfa693e9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5622736784300449979
-    second: tralalero_tralala-removebg-preview_0
-  - first:
-      213: 1399262945367532823
-    second: tralalero_tralala-removebg-preview_1
-  - first:
-      213: 3262008229851157597
-    second: tralalero_tralala-removebg-preview_2
+      213: 4069574436591613367
+    second: Jugar de Nuevo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_0
+      name: Jugar de Nuevo_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 414
-        height: 347
+        x: 0
+        y: 0
+        width: 1568
+        height: 600
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb020c59059f70e40800000000000000
-      internalID: 5622736784300449979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 125
-        width: 184
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 715aff53c3e2b6310800000000000000
-      internalID: 1399262945367532823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_2
-      rect:
-        serializedVersion: 2
-        x: 427
-        y: 10
-        width: 234
-        height: 353
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d54dda2c33bf44d20800000000000000
-      internalID: 3262008229851157597
+      spriteID: 7b5bd0873680a7830800000000000000
+      internalID: 4069574436591613367
       vertices: []
       indices: 
       edges: []
@@ -185,9 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tralalero_tralala-removebg-preview_0: 5622736784300449979
-      tralalero_tralala-removebg-preview_1: 1399262945367532823
-      tralalero_tralala-removebg-preview_2: 3262008229851157597
+      Jugar de Nuevo_0: 4069574436591613367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

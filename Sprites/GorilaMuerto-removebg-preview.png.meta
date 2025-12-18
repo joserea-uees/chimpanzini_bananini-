@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 1e362c573d1ff2d4196a82da473d20f4
+guid: 3356a3ffe5a983341b517bed358838f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5622736784300449979
-    second: tralalero_tralala-removebg-preview_0
+      213: -2476885812955032059
+    second: GorilaMuerto-removebg-preview_0
   - first:
-      213: 1399262945367532823
-    second: tralalero_tralala-removebg-preview_1
+      213: -6187996547389250620
+    second: GorilaMuerto-removebg-preview_1
   - first:
-      213: 3262008229851157597
-    second: tralalero_tralala-removebg-preview_2
+      213: -5053380781781801053
+    second: GorilaMuerto-removebg-preview_2
+  - first:
+      213: 7754845605268895899
+    second: GorilaMuerto-removebg-preview_3
+  - first:
+      213: 555315013035235484
+    second: GorilaMuerto-removebg-preview_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,71 +108,128 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_0
+      name: GorilaMuerto-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 414
-        height: 347
+        x: 176
+        y: 390
+        width: 72
+        height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb020c59059f70e40800000000000000
-      internalID: 5622736784300449979
+      spriteID: 5065c99e97550add0800000000000000
+      internalID: -2476885812955032059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_1
+      name: GorilaMuerto-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 125
-        width: 184
-        height: 103
+        x: 251
+        y: 441
+        width: 35
+        height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 715aff53c3e2b6310800000000000000
-      internalID: 1399262945367532823
+      spriteID: 4c32581fce1df1aa0800000000000000
+      internalID: -6187996547389250620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tralalero_tralala-removebg-preview_2
+      name: GorilaMuerto-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 427
-        y: 10
-        width: 234
-        height: 353
+        x: 316
+        y: 454
+        width: 45
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d54dda2c33bf44d20800000000000000
-      internalID: 3262008229851157597
+      spriteID: 3a72c13f3f8ced9b0800000000000000
+      internalID: -5053380781781801053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GorilaMuerto-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 396
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b983d06bdfebe9b60800000000000000
+      internalID: 7754845605268895899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GorilaMuerto-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 86
+        width: 472
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98186aef00e4b700800000000000000
+      internalID: 555315013035235484
       vertices: []
       indices: 
       edges: []
@@ -175,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cd4796708b174f44d9f8db12bd1e0582
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tralalero_tralala-removebg-preview_0: 5622736784300449979
-      tralalero_tralala-removebg-preview_1: 1399262945367532823
-      tralalero_tralala-removebg-preview_2: 3262008229851157597
+      GorilaMuerto-removebg-preview_0: -2476885812955032059
+      GorilaMuerto-removebg-preview_1: -6187996547389250620
+      GorilaMuerto-removebg-preview_2: -5053380781781801053
+      GorilaMuerto-removebg-preview_3: 7754845605268895899
+      GorilaMuerto-removebg-preview_4: 555315013035235484
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
