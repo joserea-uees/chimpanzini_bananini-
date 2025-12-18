@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,9 +37,9 @@ public class PlayerController : MonoBehaviour
     [Header("Muerte Definitiva")]
     public float fuerzaCaidaMuerte = 10f;
 
-    private bool muerteDefinitiva = false;
+    public bool muerteDefinitiva = false;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private int groundContacts = 0;
     private bool estaEnSuelo => groundContacts > 0;
@@ -400,9 +401,85 @@ public class PlayerController : MonoBehaviour
 
     void MostrarVentanaGameOver()
     {
-        Time.timeScale = 0f;  
+        Time.timeScale = 0f;
         AudioListener.pause = true;
+
         gameOverPanel.SetActive(true);
+
+        StartCoroutine(SubirPanelConFade());
+    }
+
+    IEnumerator SubirPanelConFade()
+    {
+        // 1. Activamos el panel
+        gameOverPanel.SetActive(true);
+
+        // 2. Inmediatamente lo hacemos invisible y lo ponemos abajo
+        RectTransform rt = gameOverPanel.GetComponent<RectTransform>();
+        rt.anchoredPosition = new Vector2(0, -800);
+
+        Image fondoImage = gameOverPanel.GetComponent<Image>();
+        if (fondoImage != null)
+        {
+            Color c = fondoImage.color;
+            c.a = 0f;
+            fondoImage.color = c;
+
+            foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+            {
+                c = g.color;
+                c.a = 0f;
+                g.color = c;
+            }
+        }
+
+        // 3. Esperamos 1 frame para que Unity lo renderice correctamente
+        yield return null;
+
+        // 4. Ahora animamos suave
+        float duracion = 1.5f;
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            float t = tiempo / duracion;
+            t = 1f - Mathf.Pow(1f - t, 3f);  // Ease out suave
+
+            rt.anchoredPosition = new Vector2(0, Mathf.Lerp(-800, 0, t));
+
+            if (fondoImage != null)
+            {
+                Color c = fondoImage.color;
+                c.a = t;
+                fondoImage.color = c;
+
+                foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+                {
+                    c = g.color;
+                    c.a = t;
+                    g.color = c;
+                }
+            }
+
+            yield return null;
+        }
+
+        // Final exacto
+        rt.anchoredPosition = Vector2.zero;
+        if (fondoImage != null)
+        {
+            Color c = fondoImage.color;
+            c.a = 1f;
+            fondoImage.color = c;
+
+            foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+            {
+                c = g.color;
+                c.a = 1f;
+                g.color = c;
+            }
+        }
     }
 
     void IgnorarSuelo(bool ignorar)

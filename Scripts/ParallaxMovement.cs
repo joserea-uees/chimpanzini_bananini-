@@ -68,10 +68,10 @@ public class ParallaxMovement : MonoBehaviour
         // ¡Posicionar el parallax con offset para más a la derecha!
         transform.position = new Vector3(cam.position.x + parallaxOffsetX, transform.position.y, 0f);
 
-        for (int i = 0; i < backgrounds.Length; i++)
+        /*for (int i = 0; i < backgrounds.Length; i++)
         {
             float speed = backSpeed[i] * parallaxSpeed;
             mat[i].SetTextureOffset("_MainTex", new Vector2(distance * speed, 0));
-        }
+        }*/
     }
 }

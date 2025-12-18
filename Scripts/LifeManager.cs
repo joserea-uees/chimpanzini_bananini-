@@ -8,7 +8,7 @@ public class LifeManager : MonoBehaviour
     public PlayerController playerController;
 
     public int maxLives = 3;
-    private int currentLives;
+    public int currentLives;
 
     public TMP_Text livesText;
 
@@ -29,7 +29,7 @@ public class LifeManager : MonoBehaviour
         UpdateLivesUI();
     }
 
-    void UpdateLivesUI()
+    public void UpdateLivesUI()
     {
         string hearts = "";
 
