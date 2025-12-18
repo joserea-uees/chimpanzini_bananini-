@@ -56,12 +56,13 @@ public class GameOverManager : MonoBehaviour
             Destroy(player);
         }
         
-        // Buscar y destruir ScoreManager si existe
+        // Mantener ScoreManager para que el puntaje persista entre niveles.
+        // Si quieres reiniciar el puntaje al volver al menú, usa:
+        // if (ScoreManager.instance != null) ScoreManager.instance.ResetScore();
         ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
         if (scoreManager != null)
         {
-            Debug.Log("Destruyendo ScoreManager");
-            Destroy(scoreManager.gameObject);
+            Debug.Log("Preservando ScoreManager para mantener puntaje entre niveles");
         }
         
         // Buscar y destruir LifeManager si existe
