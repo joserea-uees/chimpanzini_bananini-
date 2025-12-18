@@ -3,343 +3,481 @@ using System.Collections;
 
 public class EnemiController : MonoBehaviour
 {
+    public enum EstadoEnemigo { Idle, Persiguiendo, Atacando, RecibiendoDaño, Muerto };
+    
     [Header("Configuración de Vida")]
     public float vidaMaxima = 100f;
     public float vidaActual;
-    public float dañoPorGolpe = 20f; // Porcentaje de daño que recibe del player
+    public float dañoPorGolpe = 20f;
+    
+    [Header("Configuración de Recepción de Daño")]
+    public bool puedeSerInterrumpido = true;
+    public float tiempoRecuperacionDaño = 0.3f;
+    public float fuerzaRetroceso = 5f;
+    public bool esInmuneDuranteAtaque = false;
+
+    [Header("Configuración de Estados")]
+    public EstadoEnemigo estadoActual = EstadoEnemigo.Idle;
 
     [Header("Configuración de Persecución")]
-    public float rangoDeteccion = 8f; // Distancia para empezar a perseguir
-    public float velocidadPersecucion = 3f; // Velocidad al perseguir
-    public float distanciaMinima = 1f; // Distancia mínima al player
+    public float rangoDeteccion = 8f;
+    public float velocidadPersecucion = 3f;
+    public float velocidadPatrulla = 1.5f;
+    public float distanciaMinima = 1f;
+    public float distanciaParaAtacar = 1.5f;
+    public float tiempoEntreAtaques = 2f;
 
     [Header("Configuración de Ataque")]
     public Sprite[] spritesAtaque;
     public float velocidadAnimacionAtaque = 0.1f;
-    public int dañoAlPlayer = 1; // Corazones que quita al player
-    public float rangoAtaque = 1.5f; // Distancia para atacar
-    public float tiempoEntreAtaques = 2f; // Tiempo entre ataques
+    public int dañoAlPlayer = 1;
+    public float knockbackFuerza = 5f;
+    public float stunDuracion = 0.5f;
 
-    [Header("Configuración de Animación de Movimiento")]
-    public Sprite[] spritesCorrer;
-    public float velocidadAnimacionCorrer = 0.1f;
+    [Header("Animaciones")]
+    public Sprite[] spritesCaminar;
+    public Sprite[] spritesIdle;
+    public Sprite[] spritesDaño;
+    public Sprite spriteNormal;
+    public float velocidadAnimacionCaminar = 0.1f;
+    public float velocidadAnimacionIdle = 0.2f;
 
-    [Header("Configuración Visual")]
-    public Sprite spriteNormal; // Sprite cuando no está atacando
+    [Header("IA - Patrulla")]
+    public bool patrullaHabilitada = true;
+    public Transform[] puntosPatrulla;
+    public float tiempoEsperaEnPunto = 2f;
+    private int puntoPatrullaActual = 0;
+    private float tiempoEsperaRestante = 0f;
+    private bool patrullaIda = true;
 
-    [Header("Barra de Vida")]
-    public GameObject barraVidaPrefab; // Prefab de la barra de vida
-    public Vector3 offsetBarraVida = new Vector3(0, 1.5f, 0); // Posición sobre el enemigo
-    private GameObject barraVidaInstancia;
-    private UnityEngine.UI.Image barraVidaFill;
+    [Header("Recompensas")]
+    public int puntosPorMuerte = 100;
+    public GameObject[] lootDrops;
+    public float dropChance = 0.3f;
 
+    // Componentes
     private SpriteRenderer spriteRenderer;
     private Transform player;
-    private bool estaAtacando = false;
-    private bool puedeAtacar = true;
     private Collider2D enemyCollider;
-    private bool estaPersiguiendo = false;
-    private int indiceAnimacionCorrer = 0;
-    private float tiempoUltimoFrame = 0f;
+    private Rigidbody2D rb;
+
+    // Variables de control
+    private bool puedeAtacar = true;
+    private float tiempoUltimoAtaque = 0f;
+    private int indiceAnimacion = 0;
+    private float tiempoAnimacion = 0f;
+    private bool estaStuneado = false;
+    private float tiempoStunRestante = 0f;
+    private Color colorOriginal;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyCollider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
         vidaActual = vidaMaxima;
+        colorOriginal = spriteRenderer.color;
 
-        // Buscar al jugador
+        // Buscar jugador
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-        {
-            player = playerObj.transform;
-        }
-
-        // Crear barra de vida
-        CrearBarraVida();
+        if (playerObj != null) player = playerObj.transform;
+        
+        // Estado inicial
+        estadoActual = EstadoEnemigo.Idle;
     }
 
     void Update()
     {
-        // Actualizar posición de la barra de vida
-        if (barraVidaInstancia != null)
+        // Actualizar stun
+        if (estaStuneado)
         {
-            barraVidaInstancia.transform.position = transform.position + offsetBarraVida;
+            tiempoStunRestante -= Time.deltaTime;
+            if (tiempoStunRestante <= 0)
+            {
+                estaStuneado = false;
+                spriteRenderer.color = colorOriginal;
+            }
+            return;
         }
 
-        if (player != null)
+        // Máquina de estados
+        switch (estadoActual)
         {
-            float distanciaAlPlayer = Vector2.Distance(transform.position, player.position);
-            
-            // Verificar si el player está en rango de detección
-            if (distanciaAlPlayer <= rangoDeteccion)
-            {
-                estaPersiguiendo = true;
+            case EstadoEnemigo.Idle:
+                EstadoIdle();
+                break;
+            case EstadoEnemigo.Persiguiendo:
+                EstadoPersiguiendo();
+                break;
+            case EstadoEnemigo.Atacando:
+                // La animación de ataque se maneja en corrutina
+                break;
+            case EstadoEnemigo.RecibiendoDaño:
+                // Se maneja en corrutina
+                break;
+            case EstadoEnemigo.Muerto:
+                // No hacer nada
+                break;
+        }
 
-                if (!estaAtacando)
-                {
-                    // Si está en rango de ataque, atacar
-                    if (distanciaAlPlayer <= rangoAtaque && puedeAtacar)
-                    {
-                        StartCoroutine(Atacar());
-                    }
-                    // Si no está en rango de ataque, perseguir
-                    else if (distanciaAlPlayer > distanciaMinima)
-                    {
-                        PerseguirPlayer();
-                        AnimarMovimiento();
-                    }
-                    else
-                    {
-                        // Si está muy cerca pero no atacando, usar sprite normal
-                        if (spriteNormal != null)
-                        {
-                            spriteRenderer.sprite = spriteNormal;
-                        }
-                    }
-                }
+        // Actualizar animaciones según estado
+        ActualizarAnimacion();
+    }
+
+    void EstadoIdle()
+    {
+        // Si hay jugador cerca, empezar a perseguir
+        if (player != null && Vector2.Distance(transform.position, player.position) <= rangoDeteccion)
+        {
+            estadoActual = EstadoEnemigo.Persiguiendo;
+            return;
+        }
+
+        // Patrulla si está habilitada
+        if (patrullaHabilitada && puntosPatrulla.Length > 0)
+        {
+            if (tiempoEsperaRestante > 0)
+            {
+                tiempoEsperaRestante -= Time.deltaTime;
+                return;
+            }
+
+            Transform puntoObjetivo = puntosPatrulla[puntoPatrullaActual];
+            float distancia = Vector2.Distance(transform.position, puntoObjetivo.position);
+
+            if (distancia > 0.1f)
+            {
+                // Moverse hacia el punto
+                Vector2 direccion = (puntoObjetivo.position - transform.position).normalized;
+                transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    puntoObjetivo.position,
+                    velocidadPatrulla * Time.deltaTime
+                );
+
+                // Voltear sprite
+                spriteRenderer.flipX = direccion.x < 0;
             }
             else
             {
-                estaPersiguiendo = false;
-                // Volver al sprite normal cuando no está persiguiendo
-                if (!estaAtacando && spriteNormal != null)
+                // Llegó al punto, esperar
+                tiempoEsperaRestante = tiempoEsperaEnPunto;
+                
+                // Avanzar al siguiente punto
+                if (patrullaIda)
                 {
-                    spriteRenderer.sprite = spriteNormal;
+                    puntoPatrullaActual++;
+                    if (puntoPatrullaActual >= puntosPatrulla.Length - 1)
+                    {
+                        patrullaIda = false;
+                    }
+                }
+                else
+                {
+                    puntoPatrullaActual--;
+                    if (puntoPatrullaActual <= 0)
+                    {
+                        patrullaIda = true;
+                    }
                 }
             }
         }
     }
 
-    void PerseguirPlayer()
+    void EstadoPersiguiendo()
     {
-        // Mover hacia el player
-        Vector2 direccion = (player.position - transform.position).normalized;
-        transform.position = Vector2.MoveTowards(
-            transform.position, 
-            player.position, 
-            velocidadPersecucion * Time.deltaTime
-        );
+        if (player == null) return;
 
-        // Voltear el sprite según la dirección (opcional)
-        if (direccion.x < 0)
+        float distancia = Vector2.Distance(transform.position, player.position);
+
+        // Si el jugador se aleja demasiado, volver a idle
+        if (distancia > rangoDeteccion * 1.5f)
         {
-            spriteRenderer.flipX = true;
+            estadoActual = EstadoEnemigo.Idle;
+            return;
         }
-        else if (direccion.x > 0)
+
+        // Si está en rango para atacar, atacar
+        if (distancia <= distanciaParaAtacar && puedeAtacar && !estaStuneado)
         {
-            spriteRenderer.flipX = false;
+            estadoActual = EstadoEnemigo.Atacando;
+            StartCoroutine(RealizarAtaque());
+            return;
+        }
+
+        // Perseguir al jugador
+        if (distancia > distanciaMinima)
+        {
+            Vector2 direccion = (player.position - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                player.position,
+                velocidadPersecucion * Time.deltaTime
+            );
+
+            // Voltear sprite hacia el jugador
+            spriteRenderer.flipX = direccion.x < 0;
         }
     }
 
-    void AnimarMovimiento()
+    IEnumerator RealizarAtaque()
     {
-        // Animar solo si hay sprites de correr
-        if (spritesCorrer != null && spritesCorrer.Length > 0)
-        {
-            tiempoUltimoFrame += Time.deltaTime;
-            
-            if (tiempoUltimoFrame >= velocidadAnimacionCorrer)
-            {
-                spriteRenderer.sprite = spritesCorrer[indiceAnimacionCorrer];
-                indiceAnimacionCorrer = (indiceAnimacionCorrer + 1) % spritesCorrer.Length;
-                tiempoUltimoFrame = 0f;
-            }
-        }
-    }
-
-    IEnumerator Atacar()
-    {
-        estaAtacando = true;
         puedeAtacar = false;
+        tiempoUltimoAtaque = Time.time;
 
-        // Reproducir animación de ataque
+        // Animación de ataque
         if (spritesAtaque.Length > 0)
         {
             for (int i = 0; i < spritesAtaque.Length; i++)
             {
                 spriteRenderer.sprite = spritesAtaque[i];
+                
+                // Aplicar daño en frame específico (ej: frame 2)
+                if (i == 2 && player != null)
+                {
+                    float distanciaActual = Vector2.Distance(transform.position, player.position);
+                    if (distanciaActual <= distanciaParaAtacar * 1.2f)
+                    {
+                        AplicarDañoAlPlayer();
+                    }
+                }
+                
                 yield return new WaitForSeconds(velocidadAnimacionAtaque);
             }
         }
 
-        // Hacer daño al player al final de la animación
-        if (Vector2.Distance(transform.position, player.position) <= rangoAtaque)
-        {
-            HacerDañoAlPlayer();
-        }
-
-        // Volver al sprite normal
-        if (spriteNormal != null)
-        {
-            spriteRenderer.sprite = spriteNormal;
-        }
-
-        estaAtacando = false;
-
-        // Esperar antes de poder atacar de nuevo
+        // Volver a estado normal
+        estadoActual = EstadoEnemigo.Persiguiendo;
+        
+        // Cooldown antes de poder atacar de nuevo
         yield return new WaitForSeconds(tiempoEntreAtaques);
         puedeAtacar = true;
     }
 
-    void HacerDañoAlPlayer()
+    void AplicarDañoAlPlayer()
     {
-        // Usar el LifeManager para quitar corazones
         if (LifeManager.instance != null)
         {
+            // Aplicar daño
             for (int i = 0; i < dañoAlPlayer; i++)
             {
                 LifeManager.instance.PlayerDied();
             }
-            Debug.Log($"Enemigo ataca al Player! Quita {dañoAlPlayer} corazón(es)");
+            
+            // Obtener el PlayerController y llamar al método de daño
+            PlayerController playerCtrl = player.GetComponent<PlayerController>();
+            if (playerCtrl != null)
+            {
+                playerCtrl.RecibirDañoDeEnemigo(dañoAlPlayer);
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró PlayerController en el player");
+            }
+            
+            // Aplicar knockback al player
+            if (playerCtrl != null && playerCtrl.rb != null)
+            {
+                Vector2 knockbackDir = (player.position - transform.position).normalized;
+                playerCtrl.rb.AddForce(knockbackDir * knockbackFuerza, ForceMode2D.Impulse);
+            }
+            
+            Debug.Log($"Enemigo ataca! Daño: {dañoAlPlayer} corazón(es)");
         }
     }
 
     public void RecibirDaño(float cantidad)
     {
+        if (estadoActual == EstadoEnemigo.Muerto) return;
+        
+        // No recibir daño si está atacando y es inmune
+        if (estadoActual == EstadoEnemigo.Atacando && esInmuneDuranteAtaque)
+            return;
+            
+        // Interrumpir ataque si puede ser interrumpido
+        if (estadoActual == EstadoEnemigo.Atacando && puedeSerInterrumpido)
+        {
+            StopAllCoroutines();
+            estadoActual = EstadoEnemigo.RecibiendoDaño;
+        }
+    
         vidaActual -= cantidad;
-        Debug.Log($"Enemigo recibe {cantidad} de daño. Vida restante: {vidaActual}/{vidaMaxima}");
-
-        // Actualizar barra de vida
-        ActualizarBarraVida();
-
+        Debug.Log($"Enemigo recibe {cantidad} de daño. Vida: {vidaActual}/{vidaMaxima}");
+        
+        // Aplicar stun si el daño es significativo
+        if (!estaStuneado && cantidad > vidaMaxima * 0.1f)
+        {
+            AplicarStun(stunDuracion);
+        }
+        
+        // Aplicar retroceso (knockback)
+        if (rb != null && player != null)
+        {
+            Vector2 knockbackDir = (transform.position - player.position).normalized;
+            rb.AddForce(knockbackDir * fuerzaRetroceso, ForceMode2D.Impulse);
+        }
+        
+        // Efecto visual de daño
+        StartCoroutine(EfectoDañoVisual());
+        
+        // Cambiar a estado de daño
+        if (estadoActual != EstadoEnemigo.Muerto)
+        {
+            estadoActual = EstadoEnemigo.RecibiendoDaño;
+            StartCoroutine(EstadoRecibiendoDaño());
+        }
+        
         if (vidaActual <= 0)
         {
             Morir();
         }
-        else
+    }
+
+    IEnumerator EstadoRecibiendoDaño()
+    {
+        yield return new WaitForSeconds(tiempoRecuperacionDaño);
+        
+        // Solo volver a perseguir si no está muerto
+        if (estadoActual != EstadoEnemigo.Muerto)
         {
-            // Efecto visual de daño (opcional)
-            StartCoroutine(EfectoDaño());
+            if (player != null && Vector2.Distance(transform.position, player.position) <= rangoDeteccion)
+            {
+                estadoActual = EstadoEnemigo.Persiguiendo;
+            }
+            else
+            {
+                estadoActual = EstadoEnemigo.Idle;
+            }
         }
     }
 
-    IEnumerator EfectoDaño()
+    IEnumerator EfectoDañoVisual()
     {
-        // Parpadeo para indicar que recibió daño
-        Color colorOriginal = spriteRenderer.color;
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = colorOriginal;
+        // Parpadeo rojo
+        for (int i = 0; i < 3; i++)
+        {
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(0.05f);
+            spriteRenderer.color = colorOriginal;
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    void AplicarStun(float duracion)
+    {
+        estaStuneado = true;
+        tiempoStunRestante = duracion;
+        spriteRenderer.color = new Color(0.5f, 0.5f, 1f, 0.8f);
+        
+        // Cancelar ataque si estaba atacando
+        StopAllCoroutines();
     }
 
     void Morir()
     {
+        estadoActual = EstadoEnemigo.Muerto;
         Debug.Log("Enemigo eliminado!");
         
-        // Destruir barra de vida
-        if (barraVidaInstancia != null)
+        // Otorgar puntos
+        if (ScoreManager.instance != null)
         {
-            Destroy(barraVidaInstancia);
+            ScoreManager.instance.AddPoints(puntosPorMuerte);
+            Debug.Log($"+{puntosPorMuerte} puntos!");
         }
         
+        // Posible loot drop
+        if (Random.value < dropChance && lootDrops.Length > 0)
+        {
+            GameObject loot = lootDrops[Random.Range(0, lootDrops.Length)];
+            Instantiate(loot, transform.position, Quaternion.identity);
+        }
+        
+        // Animación de muerte
+        StartCoroutine(AnimacionMuerte());
+    }
+
+    IEnumerator AnimacionMuerte()
+    {
+        // Efecto visual de muerte
+        for (int i = 0; i < 5; i++)
+        {
+            spriteRenderer.color = i % 2 == 0 ? Color.red : colorOriginal;
+            transform.localScale *= 0.9f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        
+        // Destruir enemigo
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void ActualizarAnimacion()
     {
-        // Si el player choca con el enemigo, recibe daño
-        if (collision.gameObject.CompareTag("Player") && !estaAtacando)
-        {
-            RecibirDañoDelPlayer();
-        }
-    }
-
-    void RecibirDañoDelPlayer()
-    {
-        RecibirDaño(dañoPorGolpe);
-    }
-
-    void CrearBarraVida()
-    {
-        // Si no hay prefab, crear barra de vida proceduralmente
-        if (barraVidaPrefab == null)
-        {
-            // Crear canvas hijo
-            GameObject canvasGO = new GameObject("BarraVidaCanvas");
-            Canvas canvas = canvasGO.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.WorldSpace;
+        if (estadoActual == EstadoEnemigo.Atacando || 
+            estadoActual == EstadoEnemigo.RecibiendoDaño || 
+            estadoActual == EstadoEnemigo.Muerto)
+            return;
             
-            RectTransform canvasRect = canvasGO.GetComponent<RectTransform>();
-            canvasRect.sizeDelta = new Vector2(1f, 0.15f);
-            canvasRect.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-            
-            // Fondo de la barra
-            GameObject backgroundGO = new GameObject("Background");
-            backgroundGO.transform.SetParent(canvasGO.transform, false);
-            UnityEngine.UI.Image bgImage = backgroundGO.AddComponent<UnityEngine.UI.Image>();
-            bgImage.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
-            RectTransform bgRect = backgroundGO.GetComponent<RectTransform>();
-            bgRect.anchorMin = Vector2.zero;
-            bgRect.anchorMax = Vector2.one;
-            bgRect.sizeDelta = Vector2.zero;
-            
-            // Barra de vida (fill)
-            GameObject fillGO = new GameObject("Fill");
-            fillGO.transform.SetParent(canvasGO.transform, false);
-            barraVidaFill = fillGO.AddComponent<UnityEngine.UI.Image>();
-            barraVidaFill.color = new Color(0f, 1f, 0f, 0.9f); // Verde
-            barraVidaFill.type = UnityEngine.UI.Image.Type.Filled;
-            barraVidaFill.fillMethod = UnityEngine.UI.Image.FillMethod.Horizontal;
-            barraVidaFill.fillOrigin = 0;
-            
-            RectTransform fillRect = fillGO.GetComponent<RectTransform>();
-            fillRect.anchorMin = Vector2.zero;
-            fillRect.anchorMax = Vector2.one;
-            fillRect.sizeDelta = Vector2.zero;
-            
-            barraVidaInstancia = canvasGO;
-        }
-        else
-        {
-            // Usar prefab si está asignado
-            barraVidaInstancia = Instantiate(barraVidaPrefab);
-            barraVidaFill = barraVidaInstancia.GetComponentInChildren<UnityEngine.UI.Image>();
-        }
+        tiempoAnimacion += Time.deltaTime;
         
-        // Posicionar la barra
-        if (barraVidaInstancia != null)
+        switch (estadoActual)
         {
-            barraVidaInstancia.transform.position = transform.position + offsetBarraVida;
+            case EstadoEnemigo.Idle:
+                if (spritesIdle != null && spritesIdle.Length > 0 && tiempoAnimacion >= velocidadAnimacionIdle)
+                {
+                    spriteRenderer.sprite = spritesIdle[indiceAnimacion];
+                    indiceAnimacion = (indiceAnimacion + 1) % spritesIdle.Length;
+                    tiempoAnimacion = 0f;
+                }
+                else if (spriteNormal != null && (spritesIdle == null || spritesIdle.Length == 0))
+                {
+                    spriteRenderer.sprite = spriteNormal;
+                }
+                break;
+                
+            case EstadoEnemigo.Persiguiendo:
+                if (spritesCaminar != null && spritesCaminar.Length > 0 && tiempoAnimacion >= velocidadAnimacionCaminar)
+                {
+                    spriteRenderer.sprite = spritesCaminar[indiceAnimacion];
+                    indiceAnimacion = (indiceAnimacion + 1) % spritesCaminar.Length;
+                    tiempoAnimacion = 0f;
+                }
+                else if (spriteNormal != null && (spritesCaminar == null || spritesCaminar.Length == 0))
+                {
+                    spriteRenderer.sprite = spriteNormal;
+                }
+                break;
         }
     }
 
-    void ActualizarBarraVida()
-    {
-        if (barraVidaFill != null)
-        {
-            float porcentajeVida = vidaActual / vidaMaxima;
-            barraVidaFill.fillAmount = porcentajeVida;
-            
-            // Cambiar color según la vida
-            if (porcentajeVida > 0.6f)
-            {
-                barraVidaFill.color = new Color(0f, 1f, 0f, 0.9f); // Verde
-            }
-            else if (porcentajeVida > 0.3f)
-            {
-                barraVidaFill.color = new Color(1f, 1f, 0f, 0.9f); // Amarillo
-            }
-            else
-            {
-                barraVidaFill.color = new Color(1f, 0f, 0f, 0.9f); // Rojo
-            }
-        }
-    }
-
-    // Visualizar los rangos en el editor
     private void OnDrawGizmosSelected()
     {
-        // Rango de detección (amarillo)
+        // Rango de detección
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, rangoDeteccion);
         
-        // Rango de ataque (rojo)
+        // Rango de ataque
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, rangoAtaque);
+        Gizmos.DrawWireSphere(transform.position, distanciaParaAtacar);
         
-        // Distancia mínima (verde)
+        // Distancia mínima
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, distanciaMinima);
+        
+        // Ruta de patrulla
+        if (puntosPatrulla != null && puntosPatrulla.Length > 0)
+        {
+            Gizmos.color = Color.cyan;
+            for (int i = 0; i < puntosPatrulla.Length; i++)
+            {
+                if (puntosPatrulla[i] != null)
+                {
+                    Gizmos.DrawSphere(puntosPatrulla[i].position, 0.2f);
+                    if (i < puntosPatrulla.Length - 1 && puntosPatrulla[i + 1] != null)
+                    {
+                        Gizmos.DrawLine(puntosPatrulla[i].position, puntosPatrulla[i + 1].position);
+                    }
+                }
+            }
+        }
     }
 }

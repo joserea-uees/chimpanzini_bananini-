@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,26 +23,29 @@ public class PlayerController : MonoBehaviour
     [Header("Configuración de Ataque")]
     public Sprite[] spritesAtaque;  
     public float velocidadAnimacionAtaque = 0.05f;
-    public bool bloquearMovimientoDuranteAtaque = true;
-    public float dañoAtaque = 20f; // Daño que hace a los enemigos
-    public float rangoAtaque = 2f; // Rango del ataque
-    public LayerMask enemigoLayer; // Layer de los enemigos
-
-    private bool recibiendoDaño = false;
+    public bool bloquearMovimientoDuranteAtaque = true;  
+    
+    [Header("Configuración de Combate")]
+    public float rangoAtaque = 1.2f;
+    public float dañoAtaque = 25f;
+    public string tagEnemigo = "Enemy"; // Usar tag en lugar de layer
+    public Transform puntoAtaque;
 
     [Header("Saltos en modo natación (solo Nivel3)")]
-    public int saltosExtrasPermitidos = 999;
+    public int saltosExtrasPermitidos = 999; 
 
     [Header("Invulnerabilidad")]
     [SerializeField] private float tiempoInvulnerable = 1f;
     [SerializeField] private float intervaloParpadeo = 0.1f;
     private bool invulnerable = false;
     private Coroutine parpadeoCoroutine;
-
+    
     [Header("Muerte Definitiva")]
     public float fuerzaCaidaMuerte = 10f;
     public bool muerteDefinitiva = false;
-    public GameObject gameOverPanel;
+
+    [Header("Game Over UI")]
+    public TMP_Text gameOverScoreText;
 
     public Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour
     private int attackIndex = 0;  
     private int dañoIndex = 0;
     private bool isAttacking = false;  
+    public GameObject gameOverPanel;
 
     private Coroutine mainAnimCoroutine;
 
@@ -96,7 +101,7 @@ public class PlayerController : MonoBehaviour
             saltosRestantes--;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && !isAttacking && spritesAtaque.Length > 0)
+        if (Input.GetKeyDown(KeyCode.E) && !isAttacking && spritesAtaque.Length > 0 && !recibiendoDaño)
         {
             isAttacking = true;
             attackIndex = 0;
@@ -172,10 +177,10 @@ public class PlayerController : MonoBehaviour
         {
             spriteRenderer.sprite = spritesAtaque[attackIndex];
             
-            // En el frame medio del ataque, hacer daño
+            // Detectar golpe en frame específico (mitad de la animación)
             if (attackIndex == spritesAtaque.Length / 2)
             {
-                DetectarYGolpearEnemigos();
+                DetectarGolpeEnemigos();
             }
             
             attackIndex++;
@@ -192,29 +197,31 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void DetectarYGolpearEnemigos()
+    void DetectarGolpeEnemigos()
     {
-        // Calcular posición del ataque según hacia dónde mira el jugador
-        Vector2 posicionAtaque = transform.position;
-        if (!spriteRenderer.flipX)
+        Vector2 attackPos;
+        if (puntoAtaque != null)
         {
-            posicionAtaque += Vector2.right * (rangoAtaque * 0.5f);
+            attackPos = puntoAtaque.position;
         }
         else
         {
-            posicionAtaque += Vector2.left * (rangoAtaque * 0.5f);
+            attackPos = (Vector2)transform.position + (spriteRenderer.flipX ? Vector2.left * 0.5f : Vector2.right * 0.5f);
         }
-
-        // Detectar todos los enemigos en el rango
-        Collider2D[] enemigosGolpeados = Physics2D.OverlapCircleAll(posicionAtaque, rangoAtaque, enemigoLayer);
-
-        foreach (Collider2D enemigo in enemigosGolpeados)
+        
+        // Detectar todos los colliders y filtrar por tag
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(attackPos, rangoAtaque);
+        
+        foreach (Collider2D collider in hitColliders)
         {
-            EnemiController enemigoScript = enemigo.GetComponent<EnemiController>();
-            if (enemigoScript != null)
+            if (collider.CompareTag(tagEnemigo))
             {
-                enemigoScript.RecibirDaño(dañoAtaque);
-                Debug.Log($"Player golpea a {enemigo.name} causando {dañoAtaque} de daño!");
+                EnemiController enemy = collider.GetComponent<EnemiController>();
+                if (enemy != null)
+                {
+                    enemy.RecibirDaño(dañoAtaque);
+                    Debug.Log($"¡Golpe a enemigo! Daño: {dañoAtaque}");
+                }
             }
         }
     }
@@ -257,6 +264,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private bool recibiendoDaño = false;
+
     void UpdateDañoFrame()
     {
         if (spritesDaño.Length > 0)
@@ -269,6 +278,42 @@ public class PlayerController : MonoBehaviour
                 dañoIndex = 0;
                 recibiendoDaño = false;
             }
+        }
+    }
+
+    // Método público para que el enemigo pueda causar daño al jugador
+    public void RecibirDañoDeEnemigo(int dañoAlPlayer = 1)
+    {
+        if (invulnerable || muerteDefinitiva || recibiendoDaño) return;
+
+        Debug.Log($"Player recibe {dañoAlPlayer} de daño del enemigo");
+
+        // Usar el LifeManager para quitar vidas
+        bool esUltimaVida = false;
+        if (LifeManager.instance != null)
+        {
+            for (int i = 0; i < dañoAlPlayer; i++)
+            {
+                esUltimaVida = LifeManager.instance.PlayerDied();
+            }
+        }
+
+        // Activar animación de daño
+        IniciarDaño();
+        
+        // Aplicar invulnerabilidad
+        StartCoroutine(Invulnerabilidad());
+
+        // Aplicar knockback ligero
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
+
+        if (esUltimaVida)
+        {
+            StartCoroutine(MuerteFinal());
+        }
+        else
+        {
+            StartCoroutine(ReiniciarDespuesDeDaño(false));
         }
     }
 
@@ -285,16 +330,46 @@ public class PlayerController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Obstaculo") || collision.gameObject.CompareTag("DeathZone"))
         {
-            Morir();
+            // Verificar si es la última vida
+            bool esUltimaVida = false;
+            if (LifeManager.instance != null)
+            {
+                esUltimaVida = LifeManager.instance.PlayerDied();
+            }
+            
+            IniciarDaño();
+            StartCoroutine(Invulnerabilidad());
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
+            
+            if (esUltimaVida)
+            {
+                StartCoroutine(MuerteFinal());
+            }
+            else
+            {
+                StartCoroutine(ReiniciarDespuesDeDaño(false));
+            }
         }
 
+        // Detectar colisión con enemigo (para daño por contacto)
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            EnemiController enemy = collision.gameObject.GetComponent<EnemiController>();
+            if (enemy != null && !invulnerable && !recibiendoDaño)
+            {
+                RecibirDañoDeEnemigo(enemy.dañoAlPlayer);
+            }
+        }
     }
 
     IEnumerator Invulnerabilidad()
     {
         invulnerable = true;
+
         parpadeoCoroutine = StartCoroutine(Parpadeo());
+
         yield return new WaitForSeconds(tiempoInvulnerable);
+
         invulnerable = false;
 
         if (parpadeoCoroutine != null)
@@ -320,10 +395,9 @@ public class PlayerController : MonoBehaviour
         IniciarDaño();
         StartCoroutine(Invulnerabilidad());
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
-        
         if (esUltimaVida)
         {
-            StartCoroutine(ReiniciarDespuesDeDaño(true));
+            StartCoroutine(MuerteFinal());
         }
         else
         {
@@ -331,13 +405,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator ReiniciarDespuesDeDaño(bool muerte)
+    IEnumerator ReiniciarDespuesDeDaño(bool muerteDefinitiva)
     {
-        yield return new WaitForSeconds(spritesDaño.Length * velocidadAnimacionDaño);
+        yield return new WaitForSeconds(
+            spritesDaño.Length * velocidadAnimacionDaño
+        );
 
-        if (muerte)
+        if (muerteDefinitiva)
         {
             StartCoroutine(MuerteFinal());
+        }
+    }
+
+    IEnumerator AnimacionDaño()
+    {
+        recibiendoDaño = true;
+
+        for (int i = 0; i < spritesDaño.Length; i++)
+        {
+            spriteRenderer.sprite = spritesDaño[i];
+            yield return new WaitForSeconds(velocidadAnimacionDaño);
+        }
+
+        recibiendoDaño = false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            groundContacts--;
+        }
+    }
+
+    private void ReiniciarSaltos()
+    {
+        if (esModoNatacion)
+        {
+            saltosRestantes = saltosExtrasPermitidos;
+        }
+        else
+        {
+            saltosRestantes = 1;
         }
     }
 
@@ -352,15 +461,20 @@ public class PlayerController : MonoBehaviour
         if (muerteDefinitiva) yield break;
         muerteDefinitiva = true;
         
+        // Solo esperar si hay sprites de daño
         if (spritesDaño != null && spritesDaño.Length > 0)
         {
-            yield return new WaitForSeconds(spritesDaño.Length * velocidadAnimacionDaño);
+            yield return new WaitForSeconds(
+                spritesDaño.Length * velocidadAnimacionDaño
+            );
         }
         
+        // Configurar física para la caída (COPIADO DEL ORIGINAL)
         rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = 5f;
+        rb.gravityScale = 5f; // Esta línea está en el original
         rb.AddForce(Vector2.down * fuerzaCaidaMuerte, ForceMode2D.Impulse);
 
+        // Ignorar colisiones con el suelo (COPIADO DEL ORIGINAL)
         IgnorarSuelo(true);
 
         Camera cam = Camera.main;
@@ -379,21 +493,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        if (!muerteDefinitiva) return;
+
+        if (!EstaEnPantalla())
+        {
+            MostrarVentanaGameOver();
+            muerteDefinitiva = false;
+        }
+    }
+
+    bool EstaEnPantalla()
+    {
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
+        return viewPos.y > -0.2f;
+    }
+
     void MostrarVentanaGameOver()
     {
-        if (gameOverPanel != null)
+        // Actualizar score en el panel
+        if (ScoreManager.instance != null && gameOverScoreText != null)
         {
-            Time.timeScale = 0f;
-            AudioListener.pause = true;
-            gameOverPanel.SetActive(true);
-            StartCoroutine(SubirPanelConFade());
+            gameOverScoreText.text = ScoreManager.instance.score.ToString();
         }
+        
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+
+        gameOverPanel.SetActive(true);
+
+        StartCoroutine(SubirPanelConFade());
     }
 
     IEnumerator SubirPanelConFade()
     {
+        // 1. Activamos el panel
         gameOverPanel.SetActive(true);
 
+        // 2. Inmediatamente lo hacemos invisible y lo ponemos abajo
         RectTransform rt = gameOverPanel.GetComponent<RectTransform>();
         rt.anchoredPosition = new Vector2(0, -800);
 
@@ -412,8 +550,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // 3. Esperamos 1 frame para que Unity lo renderice correctamente
         yield return null;
 
+        // 4. Ahora animamos suave
         float duracion = 1.5f;
         float tiempo = 0f;
 
@@ -421,7 +561,7 @@ public class PlayerController : MonoBehaviour
         {
             tiempo += Time.unscaledDeltaTime;
             float t = tiempo / duracion;
-            t = 1f - Mathf.Pow(1f - t, 3f);
+            t = 1f - Mathf.Pow(1f - t, 3f);  // Ease out suave
 
             rt.anchoredPosition = new Vector2(0, Mathf.Lerp(-800, 0, t));
 
@@ -442,6 +582,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        // Final exacto
         rt.anchoredPosition = Vector2.zero;
         if (fondoImage != null)
         {
@@ -467,56 +608,11 @@ public class PlayerController : MonoBehaviour
         );
     }
 
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Suelo"))
-        {
-            groundContacts--;
-        }
-    }
-
-    private void ReiniciarSaltos()
-    {
-        if (esModoNatacion)
-        {
-            saltosRestantes = saltosExtrasPermitidos;
-        }
-        else
-        {
-            saltosRestantes = 1;
-        }
-    }
-
     private void OnDestroy()
     {
         if (mainAnimCoroutine != null)
         {
             StopCoroutine(mainAnimCoroutine);
         }
-    }
-
-    // Visualizar rango de ataque en el editor
-    private void OnDrawGizmosSelected()
-    {
-        if (!Application.isPlaying) return;
-
-        // Dibujar el rango de ataque
-        Gizmos.color = Color.red;
-        Vector2 posicionAtaque = transform.position;
-        
-        if (spriteRenderer != null)
-        {
-            if (!spriteRenderer.flipX)
-            {
-                posicionAtaque += Vector2.right * (rangoAtaque * 0.5f);
-            }
-            else
-            {
-                posicionAtaque += Vector2.left * (rangoAtaque * 0.5f);
-            }
-        }
-        
-        Gizmos.DrawWireSphere(posicionAtaque, rangoAtaque);
     }
 }
