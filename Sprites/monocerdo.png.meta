@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 51e9cc1a8748231418289eafc1d04d09
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9156919699216614765
+    second: monocerdo_0
+  - first:
+      213: -9130831717173946370
+    second: monocerdo_1
+  - first:
+      213: -6351541047484104993
+    second: monocerdo_2
+  - first:
+      213: 2343440652594103733
+    second: monocerdo_3
+  - first:
+      213: 3399753554974510506
+    second: monocerdo_4
+  - first:
+      213: 8080724715452959032
+    second: monocerdo_5
+  - first:
+      213: -6655179908130015974
+    second: monocerdo_6
+  - first:
+      213: 246621187231140490
+    second: monocerdo_7
+  - first:
+      213: -5018166778053403644
+    second: monocerdo_8
+  - first:
+      213: 6038547003921034332
+    second: monocerdo_9
+  - first:
+      213: -2768542368034800744
+    second: monocerdo_10
+  - first:
+      213: -3254645131327068206
+    second: monocerdo_11
+  - first:
+      213: -8837169256102958335
+    second: monocerdo_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monocerdo_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 264
+        width: 77
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65459473f9e31f70800000000000000
+      internalID: 9156919699216614765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_1
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 262
+        width: 79
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef71af13ee4c84180800000000000000
+      internalID: -9130831717173946370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_2
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 262
+        width: 80
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdeb568b11bcad7a0800000000000000
+      internalID: -6351541047484104993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_3
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 261
+        width: 78
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5c4128bd2958020800000000000000
+      internalID: 2343440652594103733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_4
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 264
+        width: 80
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad802878d95e2f20800000000000000
+      internalID: 3399753554974510506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 137
+        width: 89
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8390b40b050842070800000000000000
+      internalID: 8080724715452959032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 136
+        width: 80
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a15f79b522d04a3a0800000000000000
+      internalID: -6655179908130015974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_7
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 136
+        width: 140
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a4ff2c9ac2c6300800000000000000
+      internalID: 246621187231140490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_8
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 138
+        width: 83
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40cd57a17e3eb5ab0800000000000000
+      internalID: -5018166778053403644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_9
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 11
+        width: 81
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c6638a18a3dc350800000000000000
+      internalID: 6038547003921034332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_10
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 11
+        width: 85
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89bbaa772692499d0800000000000000
+      internalID: -2768542368034800744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_11
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 11
+        width: 85
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d7ab453f7d25d2d0800000000000000
+      internalID: -3254645131327068206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monocerdo_12
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 10
+        width: 87
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10beaf502611c5580800000000000000
+      internalID: -8837169256102958335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monocerdo_0: 9156919699216614765
+      monocerdo_1: -9130831717173946370
+      monocerdo_10: -2768542368034800744
+      monocerdo_11: -3254645131327068206
+      monocerdo_12: -8837169256102958335
+      monocerdo_2: -6351541047484104993
+      monocerdo_3: 2343440652594103733
+      monocerdo_4: 3399753554974510506
+      monocerdo_5: 8080724715452959032
+      monocerdo_6: -6655179908130015974
+      monocerdo_7: 246621187231140490
+      monocerdo_8: -5018166778053403644
+      monocerdo_9: 6038547003921034332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

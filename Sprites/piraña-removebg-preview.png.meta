@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: a48ecbe7839fa9e41b104f20850670d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2979549205696636107
+    second: "pira\xF1a-removebg-preview_0"
+  - first:
+      213: 4046090548672162397
+    second: "pira\xF1a-removebg-preview_1"
+  - first:
+      213: -2780128208692706212
+    second: "pira\xF1a-removebg-preview_2"
+  - first:
+      213: -6117524716872726885
+    second: "pira\xF1a-removebg-preview_3"
+  - first:
+      213: -6543011427178019991
+    second: "pira\xF1a-removebg-preview_4"
+  - first:
+      213: -7495374549157151167
+    second: "pira\xF1a-removebg-preview_5"
+  - first:
+      213: 7519424487297177545
+    second: "pira\xF1a-removebg-preview_6"
+  - first:
+      213: 7530139821177234675
+    second: "pira\xF1a-removebg-preview_7"
+  - first:
+      213: 6483563929003451577
+    second: "pira\xF1a-removebg-preview_8"
+  - first:
+      213: -451062097415043920
+    second: "pira\xF1a-removebg-preview_9"
+  - first:
+      213: -3268192633985882200
+    second: "pira\xF1a-removebg-preview_10"
+  - first:
+      213: 2963018170992818480
+    second: "pira\xF1a-removebg-preview_11"
+  - first:
+      213: -7716972857906543239
+    second: "pira\xF1a-removebg-preview_12"
+  - first:
+      213: -567862135743352212
+    second: "pira\xF1a-removebg-preview_13"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_0"
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 162
+        width: 84
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b97a3a8c386a6d0800000000000000
+      internalID: -2979549205696636107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_1"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 154
+        width: 93
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a6baabae9962830800000000000000
+      internalID: 4046090548672162397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_2"
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 83
+        width: 84
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5404dabf100b69d0800000000000000
+      internalID: -2780128208692706212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_3"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 149
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96012a9eaf2a1ba0800000000000000
+      internalID: -6117524716872726885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_4"
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 81
+        width: 75
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9638bb9f5cd8235a0800000000000000
+      internalID: -6543011427178019991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_5"
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 154
+        width: 74
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14efbfa4f841bf790800000000000000
+      internalID: -7495374549157151167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_6"
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 160
+        width: 75
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5362419, y: 0.47529075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c7d8b84bbc5a5860800000000000000
+      internalID: 7519424487297177545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_9"
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 155
+        width: 78
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b40fe789618db9f0800000000000000
+      internalID: -451062097415043920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "pira\xF1a-removebg-preview_10"
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 230
+        width: 135
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a729b17d1c05a2d0800000000000000
+      internalID: -3268192633985882200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 220f106329e995c4f852ce862a10b49f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "pira\xF1a-removebg-preview_0": -2979549205696636107
+      "pira\xF1a-removebg-preview_1": 4046090548672162397
+      "pira\xF1a-removebg-preview_10": -3268192633985882200
+      "pira\xF1a-removebg-preview_11": 2963018170992818480
+      "pira\xF1a-removebg-preview_12": -7716972857906543239
+      "pira\xF1a-removebg-preview_13": -567862135743352212
+      "pira\xF1a-removebg-preview_2": -2780128208692706212
+      "pira\xF1a-removebg-preview_3": -6117524716872726885
+      "pira\xF1a-removebg-preview_4": -6543011427178019991
+      "pira\xF1a-removebg-preview_5": -7495374549157151167
+      "pira\xF1a-removebg-preview_6": 7519424487297177545
+      "pira\xF1a-removebg-preview_7": 7530139821177234675
+      "pira\xF1a-removebg-preview_8": 6483563929003451577
+      "pira\xF1a-removebg-preview_9": -451062097415043920
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

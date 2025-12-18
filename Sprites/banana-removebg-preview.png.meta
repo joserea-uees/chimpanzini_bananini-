@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 5076b523d5933c34997e6ed10189f79b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7204973774759731939
+    second: banana-removebg-preview_0
+  - first:
+      213: 7191735204547173524
+    second: banana-removebg-preview_1
+  - first:
+      213: -2106880422456252128
+    second: banana-removebg-preview_2
+  - first:
+      213: 7110011163518444694
+    second: banana-removebg-preview_3
+  - first:
+      213: -2048141501857686355
+    second: banana-removebg-preview_4
+  - first:
+      213: -768893660748807571
+    second: banana-removebg-preview_5
+  - first:
+      213: -141259863049190217
+    second: banana-removebg-preview_6
+  - first:
+      213: 2322747696265311010
+    second: banana-removebg-preview_7
+  - first:
+      213: -5668079547800092849
+    second: banana-removebg-preview_8
+  - first:
+      213: 4899970211103162975
+    second: banana-removebg-preview_9
+  - first:
+      213: 1796116482076034824
+    second: banana-removebg-preview_10
+  - first:
+      213: -4468767208124052312
+    second: banana-removebg-preview_11
+  - first:
+      213: 7223950893936099517
+    second: banana-removebg-preview_12
+  - first:
+      213: 1817337861076300750
+    second: banana-removebg-preview_13
+  - first:
+      213: -885458192313787790
+    second: banana-removebg-preview_14
+  - first:
+      213: 4441078835935229902
+    second: banana-removebg-preview_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: banana-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 161
+        width: 162
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1dd073868ac20c90800000000000000
+      internalID: -7204973774759731939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 105
+        width: 36
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c94b9a01d2ec360800000000000000
+      internalID: 7191735204547173524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 199
+        width: 73
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02925432b6bd2c2e0800000000000000
+      internalID: -2106880422456252128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 293
+        width: 87
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69424969b75dba260800000000000000
+      internalID: 7110011163518444694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 105
+        width: 57
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac9904d72a8393e0800000000000000
+      internalID: -2048141501857686355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 199
+        width: 41
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6284011a475455f0800000000000000
+      internalID: -768893660748807571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 103
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4cee927e42a0ef0800000000000000
+      internalID: -141259863049190217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 201
+        width: 49
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22330ca29be0c3020800000000000000
+      internalID: 2322747696265311010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 293
+        width: 48
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ff7ba9eafe651b0800000000000000
+      internalID: -5668079547800092849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 16
+        width: 252
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52ccc222f0300440800000000000000
+      internalID: 4899970211103162975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 95
+        width: 66
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 807cd599c661de810800000000000000
+      internalID: 1796116482076034824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 201
+        width: 50
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ac0ad796efbbf1c0800000000000000
+      internalID: -4468767208124052312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 215
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db04deb5011a04460800000000000000
+      internalID: 7223950893936099517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 7
+        width: 50
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3325ee72b783910800000000000000
+      internalID: 1817337861076300750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 5
+        width: 72
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a5da7277836b3f0800000000000000
+      internalID: -885458192313787790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: banana-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec7bc63eba1e1ad30800000000000000
+      internalID: 4441078835935229902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      banana-removebg-preview_0: -7204973774759731939
+      banana-removebg-preview_1: 7191735204547173524
+      banana-removebg-preview_10: 1796116482076034824
+      banana-removebg-preview_11: -4468767208124052312
+      banana-removebg-preview_12: 7223950893936099517
+      banana-removebg-preview_13: 1817337861076300750
+      banana-removebg-preview_14: -885458192313787790
+      banana-removebg-preview_15: 4441078835935229902
+      banana-removebg-preview_2: -2106880422456252128
+      banana-removebg-preview_3: 7110011163518444694
+      banana-removebg-preview_4: -2048141501857686355
+      banana-removebg-preview_5: -768893660748807571
+      banana-removebg-preview_6: -141259863049190217
+      banana-removebg-preview_7: 2322747696265311010
+      banana-removebg-preview_8: -5668079547800092849
+      banana-removebg-preview_9: 4899970211103162975
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
