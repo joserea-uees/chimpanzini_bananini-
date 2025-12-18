@@ -142,10 +142,10 @@ TextureImporter:
       name: "pira\xF1a-removebg-preview_0"
       rect:
         serializedVersion: 2
-        x: 17
-        y: 215
-        width: 198
-        height: 149
+        x: 506
+        y: 162
+        width: 84
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,12 +165,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 164
-        width: 87
-        height: 64
+        y: 154
+        width: 93
+        height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -186,10 +186,10 @@ TextureImporter:
       name: "pira\xF1a-removebg-preview_2"
       rect:
         serializedVersion: 2
-        x: 174
-        y: 243
-        width: 65
-        height: 53
+        x: 417
+        y: 83
+        width: 84
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,12 +208,12 @@ TextureImporter:
       name: "pira\xF1a-removebg-preview_3"
       rect:
         serializedVersion: 2
-        x: 175
+        x: 168
         y: 149
-        width: 62
+        width: 82
         height: 82
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -230,10 +230,10 @@ TextureImporter:
       name: "pira\xF1a-removebg-preview_4"
       rect:
         serializedVersion: 2
-        x: 259
-        y: 238
-        width: 64
-        height: 69
+        x: 511
+        y: 81
+        width: 75
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,12 +252,12 @@ TextureImporter:
       name: "pira\xF1a-removebg-preview_5"
       rect:
         serializedVersion: 2
-        x: 259
-        y: 0
-        width: 118
-        height: 216
+        x: 255
+        y: 154
+        width: 74
+        height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,11 +275,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 332
-        y: 161
+        y: 160
         width: 75
         height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5362419, y: 0.47529075}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,59 +293,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "pira\xF1a-removebg-preview_7"
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 240
-        width: 66
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3f4ea4e554e608860800000000000000
-      internalID: 7530139821177234675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "pira\xF1a-removebg-preview_8"
-      rect:
-        serializedVersion: 2
-        x: 426
-        y: 242
-        width: 68
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b469c2ca0f3af950800000000000000
-      internalID: 6483563929003451577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: "pira\xF1a-removebg-preview_9"
       rect:
         serializedVersion: 2
-        x: 427
-        y: 162
-        width: 64
-        height: 54
+        x: 422
+        y: 155
+        width: 78
+        height: 69
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,7 +323,7 @@ TextureImporter:
         width: 135
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -380,77 +336,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: "pira\xF1a-removebg-preview_11"
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 6
-        width: 120
-        height: 131
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 039fd09e351ce1920800000000000000
-      internalID: 2963018170992818480
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "pira\xF1a-removebg-preview_12"
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 83
-        width: 64
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 975462f621ec7e490800000000000000
-      internalID: -7716972857906543239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "pira\xF1a-removebg-preview_13"
-      rect:
-        serializedVersion: 2
-        x: 479
-        y: 28
-        width: 186
-        height: 186
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c627f9d656c8e18f0800000000000000
-      internalID: -567862135743352212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 220f106329e995c4f852ce862a10b49f
     internalID: 0
     vertices: []
     indices: 
