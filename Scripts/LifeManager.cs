@@ -53,4 +53,21 @@ public class LifeManager : MonoBehaviour
             UpdateLivesUI();
         }
     }
+
+    public bool AddLife()
+    {
+        // Solo agregar vida si no está al máximo
+        if (currentLives < maxLives)
+        {
+            currentLives++;
+            UpdateLivesUI();
+            Debug.Log($"¡Vida extra recogida! Vidas actuales: {currentLives}/{maxLives}");
+            return true;
+        }
+        else
+        {
+            Debug.Log($"Vida al máximo ({maxLives}). No se puede recoger.");
+            return false;
+        }
+    }
 }
