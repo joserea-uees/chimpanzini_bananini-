@@ -1429,7 +1429,7 @@ Transform:
   m_GameObject: {fileID: 757358055}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.856421, y: -5.3324275, z: 0}
+  m_LocalPosition: {x: 1.856421, y: -5.3324275, z: 1.16}
   m_LocalScale: {x: 36.244205, y: 1.4416142, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1548,7 +1548,7 @@ GameObject:
   - component: {fileID: 942811383}
   - component: {fileID: 942811382}
   m_Layer: 0
-  m_Name: hojas
+  m_Name: burbujas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,8 +1563,8 @@ Transform:
   m_GameObject: {fileID: 942811380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -2.7056, y: 0.6038, z: 0.56}
-  m_LocalScale: {x: 2.4890182, y: 0.89393, z: 0.8431059}
+  m_LocalPosition: {x: -0.12, y: -0.12, z: 0.56}
+  m_LocalScale: {x: 2.0905263, y: 0.89393, z: 0.73029834}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1457321391}
@@ -1592,7 +1592,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4311437f0bd738249a5d714fc03b22b8, type: 2}
+  - {fileID: 2100000, guid: 43e6ee28da7644e4e91bd7a3faa5558b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1868,7 +1868,7 @@ Transform:
   m_GameObject: {fileID: 1074542247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -2.7806, y: -0.3, z: -0.71}
+  m_LocalPosition: {x: -2.7806, y: -0.3, z: 0.67}
   m_LocalScale: {x: 2.510969, y: 1, z: 1.0075701}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1897,7 +1897,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8064074bf8364a64a9f05620d812d774, type: 2}
+  - {fileID: 2100000, guid: 2c33529d046656f428f89de6ec5d0fc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2283,7 +2283,7 @@ Transform:
   m_GameObject: {fileID: 1340945454}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.23, y: -3.63, z: 0}
+  m_LocalPosition: {x: -8.14, y: -3.51, z: 0}
   m_LocalScale: {x: 0.78639114, y: 0.94808, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2345,7 +2345,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e8d937f315e08448be5b9d1f3a27359, type: 2}
+  - {fileID: 2100000, guid: b30a43a86f1676646b59d78d0e7b6c01, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2402,7 +2402,7 @@ Transform:
   m_GameObject: {fileID: 1439207742}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.75, y: 5.88, z: 0}
+  m_LocalPosition: {x: 1.75, y: 5.64, z: 0}
   m_LocalScale: {x: 36.244205, y: 1.4416142, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2735,7 +2735,7 @@ GameObject:
   - component: {fileID: 1578674755}
   - component: {fileID: 1578674754}
   m_Layer: 0
-  m_Name: arbol
+  m_Name: rocas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2750,7 +2750,7 @@ Transform:
   m_GameObject: {fileID: 1578674752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -2.762, y: -0.55, z: 0.7}
+  m_LocalPosition: {x: -2.762, y: -0.55, z: 1.37}
   m_LocalScale: {x: 2.4717727, y: 1, z: 1.2291074}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2779,7 +2779,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ddbd74406e7941f4a82de5e74718c6a6, type: 2}
+  - {fileID: 2100000, guid: 63e1a35ae1f42ce4195f0cc637f980dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
