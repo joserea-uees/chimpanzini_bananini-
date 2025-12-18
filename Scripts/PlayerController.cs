@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,10 +39,14 @@ public class PlayerController : MonoBehaviour
     private bool invulnerable = false;
     private Coroutine parpadeoCoroutine;
 
+    [Header("Game Over UI")]
+    public TMP_Text gameOverScoreText;
+
     [Header("Muerte Definitiva")]
     public float fuerzaCaidaMuerte = 10f;
     public bool muerteDefinitiva = false;
     public GameObject gameOverPanel;
+
 
     public Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -383,6 +388,10 @@ public class PlayerController : MonoBehaviour
     {
         if (gameOverPanel != null)
         {
+            if (ScoreManager.instance != null && gameOverScoreText != null)
+            {
+                ScoreManager.instance.UpdateGameOverScore(gameOverScoreText);
+            }
             Time.timeScale = 0f;
             AudioListener.pause = true;
             gameOverPanel.SetActive(true);

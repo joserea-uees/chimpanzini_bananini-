@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
 
     public int score = 0;
     public TMP_Text scoreText;  
+    public TMP_Text gameOverScoreText;
 
     void Awake()
     {
@@ -27,6 +28,19 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "<voffset=10><size=130%><sprite=0></size></voffset>" + score;
+        }
+    }
+
+    public void UpdateGameOverScore(TMP_Text gameOverText = null)
+    {
+        if (gameOverText != null)
+        {
+            gameOverScoreText = gameOverText;
+        }
+        
+        if (gameOverScoreText != null)
+        {
+            gameOverScoreText.text = score.ToString();
         }
     }
 }
