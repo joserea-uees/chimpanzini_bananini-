@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour
 {
     [Header("Configuración de Movimiento")]
@@ -10,20 +12,35 @@ public class PlayerController : MonoBehaviour
     [Header("Configuración de Animación")]
     public Sprite[] spritesCorrer;    
     public Sprite[] spritesIdle;      
-    public Sprite[] spritesSaltar;       
+    public Sprite[] spritesSaltar;     
+    public Sprite[] spritesDaño;
     public float velocidadAnimacionCorrer = 0.03f;  
     public float velocidadAnimacionIdle = 0.09f;     
     public float velocidadAnimacionSalto = 0.08f;
+    public float velocidadAnimacionDaño = 0.08f;
 
     [Header("Configuración de Ataque")]
     public Sprite[] spritesAtaque;  
     public float velocidadAnimacionAtaque = 0.05f;
-    public bool bloquearMovimientoDuranteAtaque = true;  
+    public bool bloquearMovimientoDuranteAtaque = true;
+
+    private bool recibiendoDaño = false;
 
     [Header("Saltos en modo natación (solo Nivel3)")]
-    public int saltosExtrasPermitidos = 999; 
+    public int saltosExtrasPermitidos = 999;
 
-    private Rigidbody2D rb;
+    [Header("Invulnerabilidad")]
+    [SerializeField] private float tiempoInvulnerable = 1f;
+    [SerializeField] private float intervaloParpadeo = 0.1f;
+    private bool invulnerable = false;
+    private Coroutine parpadeoCoroutine;
+
+    [Header("Muerte Definitiva")]
+    public float fuerzaCaidaMuerte = 10f;
+    public bool muerteDefinitiva = false;
+    public GameObject gameOverPanel;
+
+    public Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private int groundContacts = 0;
     private bool estaEnSuelo => groundContacts > 0;
@@ -33,6 +50,7 @@ public class PlayerController : MonoBehaviour
     private int idleIndex = 0;        
     private int jumpIndex = 0;
     private int attackIndex = 0;  
+    private int dañoIndex = 0;
     private bool isAttacking = false;  
 
     private Coroutine mainAnimCoroutine;
@@ -111,6 +129,12 @@ public class PlayerController : MonoBehaviour
     {
         while (true)
         {
+            if (recibiendoDaño)
+            {
+                UpdateDañoFrame();
+                yield return new WaitForSeconds(velocidadAnimacionDaño);
+                continue;
+            }
             if (isAttacking)
             {
                 UpdateAttackFrame();
@@ -196,6 +220,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void UpdateDañoFrame()
+    {
+        if (spritesDaño.Length > 0)
+        {
+            spriteRenderer.sprite = spritesDaño[dañoIndex];
+            dañoIndex++;
+
+            if (dañoIndex >= spritesDaño.Length)
+            {
+                dañoIndex = 0;
+                recibiendoDaño = false;
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Suelo"))
@@ -214,21 +253,181 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    bool invulnerable = false;
-
-    IEnumerator Invulnerabilidad(float tiempo)
+    IEnumerator Invulnerabilidad()
     {
         invulnerable = true;
-        yield return new WaitForSeconds(tiempo);
+        parpadeoCoroutine = StartCoroutine(Parpadeo());
+        yield return new WaitForSeconds(tiempoInvulnerable);
         invulnerable = false;
+
+        if (parpadeoCoroutine != null)
+            StopCoroutine(parpadeoCoroutine);
+
+        spriteRenderer.enabled = true;
     }
+
+    IEnumerator Parpadeo()
+    {
+        while (true)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(intervaloParpadeo);
+        }
+    }
+
     public void Morir()
     {
-        if (invulnerable) return;
+        if (invulnerable || muerteDefinitiva) return;
 
-        LifeManager.instance.PlayerDied();
-        StartCoroutine(Invulnerabilidad(1f));
+        bool esUltimaVida = LifeManager.instance.PlayerDied();
+        IniciarDaño();
+        StartCoroutine(Invulnerabilidad());
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 8f);
+        
+        if (esUltimaVida)
+        {
+            StartCoroutine(ReiniciarDespuesDeDaño(true));
+        }
+        else
+        {
+            StartCoroutine(ReiniciarDespuesDeDaño(false));
+        }
+    }
+
+    IEnumerator ReiniciarDespuesDeDaño(bool muerte)
+    {
+        yield return new WaitForSeconds(spritesDaño.Length * velocidadAnimacionDaño);
+
+        if (muerte)
+        {
+            StartCoroutine(MuerteFinal());
+        }
+    }
+
+    void IniciarDaño()
+    {
+        recibiendoDaño = true;
+        dañoIndex = 0;
+    }
+
+    public IEnumerator MuerteFinal()
+    {
+        if (muerteDefinitiva) yield break;
+        muerteDefinitiva = true;
+        
+        if (spritesDaño != null && spritesDaño.Length > 0)
+        {
+            yield return new WaitForSeconds(spritesDaño.Length * velocidadAnimacionDaño);
+        }
+        
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 5f;
+        rb.AddForce(Vector2.down * fuerzaCaidaMuerte, ForceMode2D.Impulse);
+
+        IgnorarSuelo(true);
+
+        Camera cam = Camera.main;
+
+        while (true)
+        {
+            Vector3 viewPos = cam.WorldToViewportPoint(transform.position);
+
+            if (viewPos.y < -0.2f)
+            {
+                MostrarVentanaGameOver();
+                yield break;
+            }
+
+            yield return null;
+        }
+    }
+
+    void MostrarVentanaGameOver()
+    {
+        if (gameOverPanel != null)
+        {
+            Time.timeScale = 0f;
+            AudioListener.pause = true;
+            gameOverPanel.SetActive(true);
+            StartCoroutine(SubirPanelConFade());
+        }
+    }
+
+    IEnumerator SubirPanelConFade()
+    {
+        gameOverPanel.SetActive(true);
+
+        RectTransform rt = gameOverPanel.GetComponent<RectTransform>();
+        rt.anchoredPosition = new Vector2(0, -800);
+
+        Image fondoImage = gameOverPanel.GetComponent<Image>();
+        if (fondoImage != null)
+        {
+            Color c = fondoImage.color;
+            c.a = 0f;
+            fondoImage.color = c;
+
+            foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+            {
+                c = g.color;
+                c.a = 0f;
+                g.color = c;
+            }
+        }
+
+        yield return null;
+
+        float duracion = 1.5f;
+        float tiempo = 0f;
+
+        while (tiempo < duracion)
+        {
+            tiempo += Time.unscaledDeltaTime;
+            float t = tiempo / duracion;
+            t = 1f - Mathf.Pow(1f - t, 3f);
+
+            rt.anchoredPosition = new Vector2(0, Mathf.Lerp(-800, 0, t));
+
+            if (fondoImage != null)
+            {
+                Color c = fondoImage.color;
+                c.a = t;
+                fondoImage.color = c;
+
+                foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+                {
+                    c = g.color;
+                    c.a = t;
+                    g.color = c;
+                }
+            }
+
+            yield return null;
+        }
+
+        rt.anchoredPosition = Vector2.zero;
+        if (fondoImage != null)
+        {
+            Color c = fondoImage.color;
+            c.a = 1f;
+            fondoImage.color = c;
+
+            foreach (Graphic g in gameOverPanel.GetComponentsInChildren<Graphic>())
+            {
+                c = g.color;
+                c.a = 1f;
+                g.color = c;
+            }
+        }
+    }
+
+    void IgnorarSuelo(bool ignorar)
+    {
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("Player"),
+            LayerMask.NameToLayer("Ground"),
+            ignorar
+        );
     }
 
 

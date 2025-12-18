@@ -7,7 +7,7 @@ public class LifeManager : MonoBehaviour
     public static LifeManager instance;
 
     public int maxLives = 3;
-    private int currentLives;
+    public int currentLives;
 
     public TMP_Text livesText;
 
@@ -28,7 +28,7 @@ public class LifeManager : MonoBehaviour
         UpdateLivesUI();
     }
 
-    void UpdateLivesUI()
+    public void UpdateLivesUI()
     {
         string hearts = "";
 
@@ -40,17 +40,20 @@ public class LifeManager : MonoBehaviour
         livesText.text = hearts;
     }
 
-    public void PlayerDied()
+    public bool PlayerDied()
     {
         currentLives--;
 
         if (currentLives <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            // Muerte definitiva
+            UpdateLivesUI();
+            return true;
         }
         else
         {
             UpdateLivesUI();
+            return false;
         }
     }
 

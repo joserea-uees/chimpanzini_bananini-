@@ -26,7 +26,7 @@ public class ScoreManager : MonoBehaviour
         score += points;
         if (scoreText != null)
         {
-            scoreText.text = "<voffset=10><size=130%><sprite=0></size></voffset>: " + score;
+            scoreText.text = "<voffset=10><size=130%><sprite=0></size></voffset> " + score;
         }
     }
 }
