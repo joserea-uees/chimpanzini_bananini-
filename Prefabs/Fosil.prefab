@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4091440100052993033}
   - component: {fileID: 5811640985237519014}
   - component: {fileID: 4779588432460846292}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fosil
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
@@ -55,6 +55,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -76,6 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -147,7 +150,7 @@ GameObject:
   - component: {fileID: 2234974277538307523}
   - component: {fileID: 2810557913380053643}
   - component: {fileID: 4746391709021831073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -189,6 +192,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -210,6 +215,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -280,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8255657904955333369}
   - component: {fileID: 8467723604590607533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

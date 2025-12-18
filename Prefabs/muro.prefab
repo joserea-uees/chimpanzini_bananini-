@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948731927452931065}
   - component: {fileID: 4114424573583230919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7739472403639776970}
   - component: {fileID: 2098312528045438805}
   - component: {fileID: 6281695495847295372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: muro
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
@@ -133,6 +133,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -154,6 +156,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -225,7 +228,7 @@ GameObject:
   - component: {fileID: 5913282915048319314}
   - component: {fileID: 6981300664494225097}
   - component: {fileID: 1735298473125616679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -267,6 +270,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -288,6 +293,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
