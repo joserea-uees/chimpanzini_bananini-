@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public Sprite[] spritesAtaque;  
     public float velocidadAnimacionAtaque = 0.05f;
     public bool bloquearMovimientoDuranteAtaque = true;
+    public float dañoAtaque = 20f; // Daño que hace a los enemigos
+    public float rangoAtaque = 2f; // Rango del ataque
+    public LayerMask enemigoLayer; // Layer de los enemigos
 
     private bool recibiendoDaño = false;
 
@@ -168,6 +171,13 @@ public class PlayerController : MonoBehaviour
         if (spritesAtaque.Length > 0)
         {
             spriteRenderer.sprite = spritesAtaque[attackIndex];
+            
+            // En el frame medio del ataque, hacer daño
+            if (attackIndex == spritesAtaque.Length / 2)
+            {
+                DetectarYGolpearEnemigos();
+            }
+            
             attackIndex++;
             if (attackIndex >= spritesAtaque.Length)
             {
@@ -179,6 +189,33 @@ public class PlayerController : MonoBehaviour
         else
         {
             isAttacking = false;
+        }
+    }
+
+    void DetectarYGolpearEnemigos()
+    {
+        // Calcular posición del ataque según hacia dónde mira el jugador
+        Vector2 posicionAtaque = transform.position;
+        if (!spriteRenderer.flipX)
+        {
+            posicionAtaque += Vector2.right * (rangoAtaque * 0.5f);
+        }
+        else
+        {
+            posicionAtaque += Vector2.left * (rangoAtaque * 0.5f);
+        }
+
+        // Detectar todos los enemigos en el rango
+        Collider2D[] enemigosGolpeados = Physics2D.OverlapCircleAll(posicionAtaque, rangoAtaque, enemigoLayer);
+
+        foreach (Collider2D enemigo in enemigosGolpeados)
+        {
+            EnemiController enemigoScript = enemigo.GetComponent<EnemiController>();
+            if (enemigoScript != null)
+            {
+                enemigoScript.RecibirDaño(dañoAtaque);
+                Debug.Log($"Player golpea a {enemigo.name} causando {dañoAtaque} de daño!");
+            }
         }
     }
 
@@ -457,5 +494,29 @@ public class PlayerController : MonoBehaviour
         {
             StopCoroutine(mainAnimCoroutine);
         }
+    }
+
+    // Visualizar rango de ataque en el editor
+    private void OnDrawGizmosSelected()
+    {
+        if (!Application.isPlaying) return;
+
+        // Dibujar el rango de ataque
+        Gizmos.color = Color.red;
+        Vector2 posicionAtaque = transform.position;
+        
+        if (spriteRenderer != null)
+        {
+            if (!spriteRenderer.flipX)
+            {
+                posicionAtaque += Vector2.right * (rangoAtaque * 0.5f);
+            }
+            else
+            {
+                posicionAtaque += Vector2.left * (rangoAtaque * 0.5f);
+            }
+        }
+        
+        Gizmos.DrawWireSphere(posicionAtaque, rangoAtaque);
     }
 }

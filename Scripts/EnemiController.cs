@@ -27,6 +27,12 @@ public class EnemiController : MonoBehaviour
     [Header("Configuración Visual")]
     public Sprite spriteNormal; // Sprite cuando no está atacando
 
+    [Header("Barra de Vida")]
+    public GameObject barraVidaPrefab; // Prefab de la barra de vida
+    public Vector3 offsetBarraVida = new Vector3(0, 1.5f, 0); // Posición sobre el enemigo
+    private GameObject barraVidaInstancia;
+    private UnityEngine.UI.Image barraVidaFill;
+
     private SpriteRenderer spriteRenderer;
     private Transform player;
     private bool estaAtacando = false;
@@ -48,10 +54,19 @@ public class EnemiController : MonoBehaviour
         {
             player = playerObj.transform;
         }
+
+        // Crear barra de vida
+        CrearBarraVida();
     }
 
     void Update()
     {
+        // Actualizar posición de la barra de vida
+        if (barraVidaInstancia != null)
+        {
+            barraVidaInstancia.transform.position = transform.position + offsetBarraVida;
+        }
+
         if (player != null)
         {
             float distanciaAlPlayer = Vector2.Distance(transform.position, player.position);
@@ -185,6 +200,9 @@ public class EnemiController : MonoBehaviour
         vidaActual -= cantidad;
         Debug.Log($"Enemigo recibe {cantidad} de daño. Vida restante: {vidaActual}/{vidaMaxima}");
 
+        // Actualizar barra de vida
+        ActualizarBarraVida();
+
         if (vidaActual <= 0)
         {
             Morir();
@@ -208,6 +226,13 @@ public class EnemiController : MonoBehaviour
     void Morir()
     {
         Debug.Log("Enemigo eliminado!");
+        
+        // Destruir barra de vida
+        if (barraVidaInstancia != null)
+        {
+            Destroy(barraVidaInstancia);
+        }
+        
         Destroy(gameObject);
     }
 
@@ -223,6 +248,83 @@ public class EnemiController : MonoBehaviour
     void RecibirDañoDelPlayer()
     {
         RecibirDaño(dañoPorGolpe);
+    }
+
+    void CrearBarraVida()
+    {
+        // Si no hay prefab, crear barra de vida proceduralmente
+        if (barraVidaPrefab == null)
+        {
+            // Crear canvas hijo
+            GameObject canvasGO = new GameObject("BarraVidaCanvas");
+            Canvas canvas = canvasGO.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.WorldSpace;
+            
+            RectTransform canvasRect = canvasGO.GetComponent<RectTransform>();
+            canvasRect.sizeDelta = new Vector2(1f, 0.15f);
+            canvasRect.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+            
+            // Fondo de la barra
+            GameObject backgroundGO = new GameObject("Background");
+            backgroundGO.transform.SetParent(canvasGO.transform, false);
+            UnityEngine.UI.Image bgImage = backgroundGO.AddComponent<UnityEngine.UI.Image>();
+            bgImage.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
+            RectTransform bgRect = backgroundGO.GetComponent<RectTransform>();
+            bgRect.anchorMin = Vector2.zero;
+            bgRect.anchorMax = Vector2.one;
+            bgRect.sizeDelta = Vector2.zero;
+            
+            // Barra de vida (fill)
+            GameObject fillGO = new GameObject("Fill");
+            fillGO.transform.SetParent(canvasGO.transform, false);
+            barraVidaFill = fillGO.AddComponent<UnityEngine.UI.Image>();
+            barraVidaFill.color = new Color(0f, 1f, 0f, 0.9f); // Verde
+            barraVidaFill.type = UnityEngine.UI.Image.Type.Filled;
+            barraVidaFill.fillMethod = UnityEngine.UI.Image.FillMethod.Horizontal;
+            barraVidaFill.fillOrigin = 0;
+            
+            RectTransform fillRect = fillGO.GetComponent<RectTransform>();
+            fillRect.anchorMin = Vector2.zero;
+            fillRect.anchorMax = Vector2.one;
+            fillRect.sizeDelta = Vector2.zero;
+            
+            barraVidaInstancia = canvasGO;
+        }
+        else
+        {
+            // Usar prefab si está asignado
+            barraVidaInstancia = Instantiate(barraVidaPrefab);
+            barraVidaFill = barraVidaInstancia.GetComponentInChildren<UnityEngine.UI.Image>();
+        }
+        
+        // Posicionar la barra
+        if (barraVidaInstancia != null)
+        {
+            barraVidaInstancia.transform.position = transform.position + offsetBarraVida;
+        }
+    }
+
+    void ActualizarBarraVida()
+    {
+        if (barraVidaFill != null)
+        {
+            float porcentajeVida = vidaActual / vidaMaxima;
+            barraVidaFill.fillAmount = porcentajeVida;
+            
+            // Cambiar color según la vida
+            if (porcentajeVida > 0.6f)
+            {
+                barraVidaFill.color = new Color(0f, 1f, 0f, 0.9f); // Verde
+            }
+            else if (porcentajeVida > 0.3f)
+            {
+                barraVidaFill.color = new Color(1f, 1f, 0f, 0.9f); // Amarillo
+            }
+            else
+            {
+                barraVidaFill.color = new Color(1f, 0f, 0f, 0.9f); // Rojo
+            }
+        }
     }
 
     // Visualizar los rangos en el editor
