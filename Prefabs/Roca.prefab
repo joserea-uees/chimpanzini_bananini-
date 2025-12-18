@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5211439159287345997}
   - component: {fileID: 696643353590772872}
   - component: {fileID: 3991527720872916842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668447116643681166}
   - component: {fileID: 7753742719255597755}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 2306800433292884012}
   - component: {fileID: 3174030968028759556}
   - component: {fileID: 8682928956785737754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roca
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}

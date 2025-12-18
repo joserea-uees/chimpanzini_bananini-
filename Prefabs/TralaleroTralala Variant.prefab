@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TralaleroTralala Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 880942024422774047, guid: dc9c003137a5bf844b80a6e230a7eb59, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1234135413451745500, guid: dc9c003137a5bf844b80a6e230a7eb59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.43

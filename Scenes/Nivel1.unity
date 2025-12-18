@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 189019137}
   - component: {fileID: 189019138}
   - component: {fileID: 189019139}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3017,7 +3017,7 @@ GameObject:
   - component: {fileID: 1240659876}
   - component: {fileID: 1240659875}
   - component: {fileID: 1240659874}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}

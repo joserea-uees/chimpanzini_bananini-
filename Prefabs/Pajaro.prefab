@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3063930079891627697}
   - component: {fileID: 8651031276015451603}
   - component: {fileID: 4833899162140904936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pajaro
   m_TagString: Untagged
   m_Icon: {fileID: 0}

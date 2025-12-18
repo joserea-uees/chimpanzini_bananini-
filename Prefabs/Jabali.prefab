@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 317696793685075672}
   - component: {fileID: 1871163303768397596}
   - component: {fileID: -6312173366467001415}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jabali
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4953995474171577107}
   - component: {fileID: 1546405142959026172}
   - component: {fileID: 1002054713772188294}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: pezGlobo 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

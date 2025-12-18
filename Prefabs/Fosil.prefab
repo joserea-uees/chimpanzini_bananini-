@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4091440100052993033}
   - component: {fileID: 5811640985237519014}
   - component: {fileID: 4779588432460846292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fosil
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2234974277538307523}
   - component: {fileID: 2810557913380053643}
   - component: {fileID: 4746391709021831073}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8255657904955333369}
   - component: {fileID: 8467723604590607533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

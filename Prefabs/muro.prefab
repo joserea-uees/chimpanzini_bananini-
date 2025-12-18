@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1948731927452931065}
   - component: {fileID: 4114424573583230919}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7739472403639776970}
   - component: {fileID: 2098312528045438805}
   - component: {fileID: 6281695495847295372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: muro
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 5913282915048319314}
   - component: {fileID: 6981300664494225097}
   - component: {fileID: 1735298473125616679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}

@@ -1133,7 +1133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8603093580495439777, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Size.x
@@ -1268,7 +1272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8603093580495439777, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Size.x
@@ -1944,7 +1952,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8603093580495439777, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Size.x
@@ -2485,7 +2497,7 @@ GameObject:
   - component: {fileID: 1074542248}
   - component: {fileID: 1074542250}
   - component: {fileID: 1074542249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2905,7 +2917,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 713120309197425481, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8603093580495439777, guid: 123ed3493e92b4c4db02c25c26f65a89, type: 3}
       propertyPath: m_Size.x
@@ -3279,7 +3295,7 @@ GameObject:
   - component: {fileID: 1441060443}
   - component: {fileID: 1441060442}
   - component: {fileID: 1441060441}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4825,7 +4841,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 249664893422247839, guid: 3b93b9880a8a03245b0ed86a8a6cb8fb, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 249664893422247839, guid: 3b93b9880a8a03245b0ed86a8a6cb8fb, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1452490996503036337, guid: 3b93b9880a8a03245b0ed86a8a6cb8fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4886,11 +4906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254151262985990209, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2254151262985990209, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2495298218249684128, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4910,15 +4930,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2495298218249684128, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2495298218249684128, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2495298218249684128, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2495298218249684128, guid: 98d876191601b7346b91eabf4d85e55c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4995,11 +5015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6924764176622099677, guid: 7b58fecd19e1cd942ad701cc7b7673b9, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6924764176622099677, guid: 7b58fecd19e1cd942ad701cc7b7673b9, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

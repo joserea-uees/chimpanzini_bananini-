@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4658188393619932745}
   - component: {fileID: 6564711005767689946}
   - component: {fileID: 3891119914711425653}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: piedra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 7509300378739350662}
   - component: {fileID: 1424061186086649599}
   - component: {fileID: 230161170203136847}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7106239112656530041}
   - component: {fileID: 5154031544269970863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Suelo
   m_Icon: {fileID: 0}
