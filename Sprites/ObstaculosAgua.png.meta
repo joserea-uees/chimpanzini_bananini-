@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 2cf5bdacee1d88b4e8d119f9637cc2c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7797102999695465660
+    second: ObstaculosAgua_0
+  - first:
+      213: -6884858793269394894
+    second: ObstaculosAgua_1
+  - first:
+      213: -4051118160953146706
+    second: ObstaculosAgua_2
+  - first:
+      213: -289215279624286437
+    second: ObstaculosAgua_3
+  - first:
+      213: -4191211240678059097
+    second: ObstaculosAgua_4
+  - first:
+      213: -2258606769707638370
+    second: ObstaculosAgua_5
+  - first:
+      213: 8663616722490687369
+    second: ObstaculosAgua_6
+  - first:
+      213: 6099589101254499251
+    second: ObstaculosAgua_7
+  - first:
+      213: 7584501379922235950
+    second: ObstaculosAgua_8
+  - first:
+      213: 3528288996591019447
+    second: ObstaculosAgua_9
+  - first:
+      213: 7259971507066044519
+    second: ObstaculosAgua_10
+  - first:
+      213: 1820575083606957243
+    second: ObstaculosAgua_11
+  - first:
+      213: 1371139504298090941
+    second: ObstaculosAgua_12
+  - first:
+      213: -7978247217364489167
+    second: ObstaculosAgua_13
+  - first:
+      213: 6466268610074142224
+    second: ObstaculosAgua_14
+  - first:
+      213: -9169910635791315693
+    second: ObstaculosAgua_15
+  - first:
+      213: 5780102305648595540
+    second: ObstaculosAgua_16
+  - first:
+      213: -494995381396289896
+    second: ObstaculosAgua_17
+  - first:
+      213: -7810290335072206189
+    second: ObstaculosAgua_18
+  - first:
+      213: -3876737485384066186
+    second: ObstaculosAgua_19
+  - first:
+      213: -8415271633489633920
+    second: ObstaculosAgua_20
+  - first:
+      213: -2980715788677866699
+    second: ObstaculosAgua_21
+  - first:
+      213: 5072425689373598813
+    second: ObstaculosAgua_22
+  - first:
+      213: 5691804225602541332
+    second: ObstaculosAgua_23
+  - first:
+      213: -462334923833732426
+    second: ObstaculosAgua_24
+  - first:
+      213: 6992584447489890597
+    second: ObstaculosAgua_25
+  - first:
+      213: 5745991183608787117
+    second: ObstaculosAgua_26
+  - first:
+      213: -188510273778206855
+    second: ObstaculosAgua_27
+  - first:
+      213: -5827169805788322974
+    second: ObstaculosAgua_28
+  - first:
+      213: -2804999035352977795
+    second: ObstaculosAgua_29
+  - first:
+      213: 9207353657563053679
+    second: ObstaculosAgua_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ObstaculosAgua_0
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 470
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443e402f1202bc390800000000000000
+      internalID: -7797102999695465660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_1
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 325
+        width: 113
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2320472b7611470a0800000000000000
+      internalID: -6884858793269394894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_2
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 476
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea201411f7987c7c0800000000000000
+      internalID: -4051118160953146706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 342
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1f016a4c308cfbf0800000000000000
+      internalID: -289215279624286437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_4
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 462
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a392c42593d5d5c0800000000000000
+      internalID: -4191211240678059097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 413
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91a84c0c11d7a0e0800000000000000
+      internalID: -2258606769707638370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 417
+        width: 11
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ff03ed1895b3870800000000000000
+      internalID: 8663616722490687369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 154
+        width: 110
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb5e1878f716a450800000000000000
+      internalID: 6099589101254499251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_8
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 302
+        width: 134
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2299b412df814960800000000000000
+      internalID: 7584501379922235950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_9
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 181
+        width: 113
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b52ab2162007f030800000000000000
+      internalID: 3528288996591019447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_10
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 284
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7600126ee9990c460800000000000000
+      internalID: 7259971507066044519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_11
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 280
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcd159846bf34910800000000000000
+      internalID: 1820575083606957243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_12
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 241
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db161335d14470310800000000000000
+      internalID: 1371139504298090941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_13
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 170
+        width: 120
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13cadb62d62974190800000000000000
+      internalID: -7978247217364489167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_14
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 253
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0166ab58a0dccb950800000000000000
+      internalID: 6466268610074142224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_15
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 108
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31d059b6cdeedb080800000000000000
+      internalID: -9169910635791315693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_16
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 106
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 452d9953c6c073050800000000000000
+      internalID: 5780102305648595540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_17
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 152
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8964a6eb25c6129f0800000000000000
+      internalID: -494995381396289896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_18
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 133
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392ca5922564c9390800000000000000
+      internalID: -7810290335072206189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_19
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 137
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67bdd300ccf033ac0800000000000000
+      internalID: -3876737485384066186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_20
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 138
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ddd6d0903f63b80800000000000000
+      internalID: -8415271633489633920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_21
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 131
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b157f58ce52a6d0800000000000000
+      internalID: -2980715788677866699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 21
+        width: 142
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54eda42a40e46640800000000000000
+      internalID: 5072425689373598813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_23
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 110
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4175b1669c95dfe40800000000000000
+      internalID: 5691804225602541332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_24
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 112
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b212a916d47599f0800000000000000
+      internalID: -462334923833732426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_25
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 122
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5295e86b186aa0160800000000000000
+      internalID: 6992584447489890597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_26
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 68
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da03785b98cddbf40800000000000000
+      internalID: 5745991183608787117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_27
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 67
+        width: 50
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97730fe97e6426df0800000000000000
+      internalID: -188510273778206855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_28
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263ea107febb12fa0800000000000000
+      internalID: -5827169805788322974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_29
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 27
+        width: 98
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ee8762d34a219d0800000000000000
+      internalID: -2804999035352977795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ObstaculosAgua_30
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 14
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e70707e5717cf70800000000000000
+      internalID: 9207353657563053679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ObstaculosAgua_0: -7797102999695465660
+      ObstaculosAgua_1: -6884858793269394894
+      ObstaculosAgua_10: 7259971507066044519
+      ObstaculosAgua_11: 1820575083606957243
+      ObstaculosAgua_12: 1371139504298090941
+      ObstaculosAgua_13: -7978247217364489167
+      ObstaculosAgua_14: 6466268610074142224
+      ObstaculosAgua_15: -9169910635791315693
+      ObstaculosAgua_16: 5780102305648595540
+      ObstaculosAgua_17: -494995381396289896
+      ObstaculosAgua_18: -7810290335072206189
+      ObstaculosAgua_19: -3876737485384066186
+      ObstaculosAgua_2: -4051118160953146706
+      ObstaculosAgua_20: -8415271633489633920
+      ObstaculosAgua_21: -2980715788677866699
+      ObstaculosAgua_22: 5072425689373598813
+      ObstaculosAgua_23: 5691804225602541332
+      ObstaculosAgua_24: -462334923833732426
+      ObstaculosAgua_25: 6992584447489890597
+      ObstaculosAgua_26: 5745991183608787117
+      ObstaculosAgua_27: -188510273778206855
+      ObstaculosAgua_28: -5827169805788322974
+      ObstaculosAgua_29: -2804999035352977795
+      ObstaculosAgua_3: -289215279624286437
+      ObstaculosAgua_30: 9207353657563053679
+      ObstaculosAgua_4: -4191211240678059097
+      ObstaculosAgua_5: -2258606769707638370
+      ObstaculosAgua_6: 8663616722490687369
+      ObstaculosAgua_7: 6099589101254499251
+      ObstaculosAgua_8: 7584501379922235950
+      ObstaculosAgua_9: 3528288996591019447
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
