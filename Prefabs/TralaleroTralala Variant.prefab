@@ -66,6 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 1399262945367532823, guid: 1e362c573d1ff2d4196a82da473d20f4, type: 3}
     m_RemovedComponents:
     - {fileID: 2886512413380681953, guid: dc9c003137a5bf844b80a6e230a7eb59, type: 3}
+    - {fileID: 901759003980585222, guid: dc9c003137a5bf844b80a6e230a7eb59, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -96,19 +97,36 @@ MonoBehaviour:
   vidaMaxima: 100
   vidaActual: 0
   "da\xF1oPorGolpe": 20
+  puedeSerInterrumpido: 1
+  "tiempoRecuperacionDa\xF1o": 0.3
+  fuerzaRetroceso: 5
+  esInmuneDuranteAtaque: 0
+  estadoActual: 0
   rangoDeteccion: 8
   velocidadPersecucion: 3
+  velocidadPatrulla: 1.5
   distanciaMinima: 1
+  distanciaParaAtacar: 1.5
+  tiempoEntreAtaques: 2
   spritesAtaque: []
   velocidadAnimacionAtaque: 0.1
   "da\xF1oAlPlayer": 1
-  rangoAtaque: 1.5
-  tiempoEntreAtaques: 2
-  spritesCorrer: []
-  velocidadAnimacionCorrer: 0.1
+  knockbackFuerza: 5
+  stunDuracion: 0.5
+  spritesCaminar:
+  - {fileID: 1399262945367532823, guid: 1e362c573d1ff2d4196a82da473d20f4, type: 3}
+  - {fileID: 3262008229851157597, guid: 1e362c573d1ff2d4196a82da473d20f4, type: 3}
+  spritesIdle: []
+  "spritesDa\xF1o": []
   spriteNormal: {fileID: 0}
-  barraVidaPrefab: {fileID: 0}
-  offsetBarraVida: {x: 0, y: 1.5, z: 0}
+  velocidadAnimacionCaminar: 0.1
+  velocidadAnimacionIdle: 0.2
+  patrullaHabilitada: 1
+  puntosPatrulla: []
+  tiempoEsperaEnPunto: 2
+  puntosPorMuerte: 100
+  lootDrops: []
+  dropChance: 0.3
 --- !u!60 &3687459512771013134
 PolygonCollider2D:
   m_ObjectHideFlags: 0
