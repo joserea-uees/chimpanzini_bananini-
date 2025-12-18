@@ -3038,7 +3038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleItemPrefabs:
-  - {fileID: 8554537745110424588, guid: b21f58086da77ce49a252127a80bfcca, type: 3}
+  - {fileID: 8554537745110424588, guid: dac4e739e8c56fa4c8172bf87bb4db11, type: 3}
   doubleItemPairs: []
   doubleSpawnChance: 0.3
   doubleSpawnOffset: 0.5
