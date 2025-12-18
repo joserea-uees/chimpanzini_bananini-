@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2175453290332433794}
   - component: {fileID: 8761531468594903269}
   - component: {fileID: 2463607204745744458}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "pira\xF1a 1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
