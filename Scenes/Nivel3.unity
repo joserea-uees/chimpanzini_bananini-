@@ -1954,19 +1954,18 @@ MonoBehaviour:
   - {fileID: 7402079830906333199, guid: 85414c0b22e57bc4d8c22dd875de1356, type: 3}
   velocidadAnimacionAtaque: 0.05
   bloquearMovimientoDuranteAtaque: 0
-  "da\xF1oAtaque": 20
   rangoAtaque: 2
-  enemigoLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  "da\xF1oAtaque": 20
+  tagEnemigo: Enemy
+  puntoAtaque: {fileID: 0}
   saltosExtrasPermitidos: 999
   tiempoInvulnerable: 1
   intervaloParpadeo: 0.1
-  gameOverScoreText: {fileID: 0}
   fuerzaCaidaMuerte: 10
   muerteDefinitiva: 0
-  gameOverPanel: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
   rb: {fileID: 0}
+  gameOverPanel: {fileID: 0}
 --- !u!61 &1340945457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3380,11 +3379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6118818516416480573, guid: 2f2c421d8f44590448c53d42ed1eb76b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.33
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6118818516416480573, guid: 2f2c421d8f44590448c53d42ed1eb76b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.63
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 6118818516416480573, guid: 2f2c421d8f44590448c53d42ed1eb76b, type: 3}
       propertyPath: m_LocalPosition.z
